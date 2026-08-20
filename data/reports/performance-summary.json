@@ -1,0 +1,230 @@
+{
+  "as_of": "2026-08-20",
+  "videos": 849,
+  "metadata_coverage": {
+    "view_count": 849,
+    "like_count": 849,
+    "comment_count": 847,
+    "thumbnail_url": 849
+  },
+  "overall": {
+    "median_views": 718106,
+    "median_views_per_day": 463.5266,
+    "median_engagement_rate": 0.044497
+  },
+  "by_topic": {
+    "bilim": {
+      "videos": 20,
+      "median_views": 789116.0,
+      "median_views_per_day": 660.23225,
+      "median_engagement_rate": 0.041186
+    },
+    "günlük_hayat": {
+      "videos": 76,
+      "median_views": 922195.0,
+      "median_views_per_day": 537.65115,
+      "median_engagement_rate": 0.045534
+    },
+    "kitap": {
+      "videos": 12,
+      "median_views": 1372319.5,
+      "median_views_per_day": 668.08915,
+      "median_engagement_rate": 0.04951
+    },
+    "psikoloji": {
+      "videos": 11,
+      "median_views": 795333,
+      "median_views_per_day": 684.8044,
+      "median_engagement_rate": 0.050282
+    },
+    "sanat_tasarım": {
+      "videos": 17,
+      "median_views": 547671,
+      "median_views_per_day": 273.9725,
+      "median_engagement_rate": 0.046525
+    },
+    "sinema": {
+      "videos": 25,
+      "median_views": 594495,
+      "median_views_per_day": 808.5757,
+      "median_engagement_rate": 0.037808
+    },
+    "tarih": {
+      "videos": 13,
+      "median_views": 471197,
+      "median_views_per_day": 540.1872,
+      "median_engagement_rate": 0.035505
+    },
+    "teknoloji": {
+      "videos": 18,
+      "median_views": 725362.5,
+      "median_views_per_day": 328.7531,
+      "median_engagement_rate": 0.045659
+    },
+    "unclassified": {
+      "videos": 558,
+      "median_views": 629686.0,
+      "median_views_per_day": 385.78195,
+      "median_engagement_rate": 0.0446
+    },
+    "uzay": {
+      "videos": 99,
+      "median_views": 754741,
+      "median_views_per_day": 658.6313,
+      "median_engagement_rate": 0.04112
+    }
+  },
+  "by_semantic_topic": {
+    "bilim": {
+      "videos": 1,
+      "median_views": 3783958,
+      "median_views_per_day": 1420.4047,
+      "median_engagement_rate": 0.059917
+    },
+    "günlük_hayat": {
+      "videos": 1,
+      "median_views": 1474597,
+      "median_views_per_day": 536.6074,
+      "median_engagement_rate": 0.043124
+    },
+    "psikoloji": {
+      "videos": 547,
+      "median_views": 676750,
+      "median_views_per_day": 431.9624,
+      "median_engagement_rate": 0.04411
+    },
+    "sanat_tasarım": {
+      "videos": 1,
+      "median_views": 428926,
+      "median_views_per_day": 135.779,
+      "median_engagement_rate": 0.167157
+    },
+    "sinema": {
+      "videos": 1,
+      "median_views": 163868,
+      "median_views_per_day": 40.4413,
+      "median_engagement_rate": 0.046763
+    },
+    "tarih": {
+      "videos": 1,
+      "median_views": 726319,
+      "median_views_per_day": 522.5317,
+      "median_engagement_rate": 0.04959
+    },
+    "teknoloji": {
+      "videos": 241,
+      "median_views": 761639,
+      "median_views_per_day": 535.4754,
+      "median_engagement_rate": 0.044432
+    },
+    "unclassified": {
+      "videos": 49,
+      "median_views": 605121,
+      "median_views_per_day": 244.3033,
+      "median_engagement_rate": 0.046114
+    },
+    "uzay": {
+      "videos": 7,
+      "median_views": 1402721,
+      "median_views_per_day": 709.0308,
+      "median_engagement_rate": 0.042221
+    }
+  },
+  "by_emotion": {
+    "eğlence": {
+      "videos": 28,
+      "median_views": 732823.0,
+      "median_views_per_day": 290.45585,
+      "median_engagement_rate": 0.050257
+    },
+    "hayranlık": {
+      "videos": 12,
+      "median_views": 342609.0,
+      "median_views_per_day": 459.04955,
+      "median_engagement_rate": 0.029551
+    },
+    "korku": {
+      "videos": 99,
+      "median_views": 460680,
+      "median_views_per_day": 172.9815,
+      "median_engagement_rate": 0.042638
+    },
+    "merak": {
+      "videos": 307,
+      "median_views": 780190,
+      "median_views_per_day": 506.6716,
+      "median_engagement_rate": 0.044036
+    },
+    "mutluluk": {
+      "videos": 24,
+      "median_views": 814262.5,
+      "median_views_per_day": 480.30365,
+      "median_engagement_rate": 0.049035
+    },
+    "nötr": {
+      "videos": 105,
+      "median_views": 568132,
+      "median_views_per_day": 283.2563,
+      "median_engagement_rate": 0.044848
+    },
+    "öfke": {
+      "videos": 6,
+      "median_views": 453037.0,
+      "median_views_per_day": 164.49725,
+      "median_engagement_rate": 0.050421
+    },
+    "üzüntü": {
+      "videos": 258,
+      "median_views": 757878.0,
+      "median_views_per_day": 584.10405,
+      "median_engagement_rate": 0.045242
+    },
+    "şaşkınlık": {
+      "videos": 10,
+      "median_views": 712130.0,
+      "median_views_per_day": 707.5193,
+      "median_engagement_rate": 0.045422
+    }
+  },
+  "by_duration": {
+    "10m+": {
+      "videos": 577,
+      "median_views": 843727,
+      "median_views_per_day": 627.4175,
+      "median_engagement_rate": 0.045616
+    },
+    "5-10m": {
+      "videos": 189,
+      "median_views": 543500,
+      "median_views_per_day": 186.5424,
+      "median_engagement_rate": 0.045189
+    },
+    "<5m": {
+      "videos": 83,
+      "median_views": 68644,
+      "median_views_per_day": 17.1605,
+      "median_engagement_rate": 0.022706
+    }
+  },
+  "by_title_length": {
+    "40-79c": {
+      "videos": 424,
+      "median_views": 708976.0,
+      "median_views_per_day": 506.37835,
+      "median_engagement_rate": 0.041869
+    },
+    "80c+": {
+      "videos": 33,
+      "median_views": 650413,
+      "median_views_per_day": 425.6105,
+      "median_engagement_rate": 0.044662
+    },
+    "<40c": {
+      "videos": 392,
+      "median_views": 737596.5,
+      "median_views_per_day": 405.97175,
+      "median_engagement_rate": 0.046645
+    }
+  },
+  "warning": "Associational snapshot only; view counts are current channel metadata, not lifetime-normalized ground truth."
+}

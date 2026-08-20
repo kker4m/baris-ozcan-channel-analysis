@@ -1,0 +1,21 @@
+{
+  "features": {
+    "brightness_mean": {
+      "videos": 849,
+      "pearson_log_views": 0.152197
+    },
+    "saturation_mean": {
+      "videos": 849,
+      "pearson_log_views": 0.232684
+    },
+    "edge_density": {
+      "videos": 849,
+      "pearson_log_views": -0.086117
+    },
+    "brightness_std": {
+      "videos": 849,
+      "pearson_log_views": 0.083895
+    }
+  },
+  "warning": "Correlations are exploratory and do not identify causal thumbnail effects."
+}

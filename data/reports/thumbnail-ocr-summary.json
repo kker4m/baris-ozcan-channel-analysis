@@ -1,0 +1,271 @@
+{
+  "thumbnails": 849,
+  "with_ocr_text": 845,
+  "median_log_views_per_day_by_text_count": {
+    "0": {
+      "videos": 4,
+      "median": 7.027076
+    },
+    "1-3": {
+      "videos": 35,
+      "median": 5.988446
+    },
+    "4+": {
+      "videos": 810,
+      "median": 6.141514
+    }
+  },
+  "top_tokens_by_median_performance": [
+    {
+      "token": "yaa",
+      "videos": 3,
+      "median_log_views_per_day": 8.027036
+    },
+    {
+      "token": "bia",
+      "videos": 3,
+      "median_log_views_per_day": 7.821181
+    },
+    {
+      "token": "oie",
+      "videos": 3,
+      "median_log_views_per_day": 7.708252
+    },
+    {
+      "token": "wey",
+      "videos": 3,
+      "median_log_views_per_day": 7.692942
+    },
+    {
+      "token": "gri",
+      "videos": 3,
+      "median_log_views_per_day": 7.265967
+    },
+    {
+      "token": "meta",
+      "videos": 4,
+      "median_log_views_per_day": 7.265194
+    },
+    {
+      "token": "ami",
+      "videos": 3,
+      "median_log_views_per_day": 7.202158
+    },
+    {
+      "token": "mars",
+      "videos": 4,
+      "median_log_views_per_day": 6.960517
+    },
+    {
+      "token": "adi",
+      "videos": 5,
+      "median_log_views_per_day": 6.910074
+    },
+    {
+      "token": "hizi",
+      "videos": 3,
+      "median_log_views_per_day": 6.884286
+    },
+    {
+      "token": "tae",
+      "videos": 4,
+      "median_log_views_per_day": 6.86058
+    },
+    {
+      "token": "aya",
+      "videos": 4,
+      "median_log_views_per_day": 6.858752
+    },
+    {
+      "token": "geri",
+      "videos": 3,
+      "median_log_views_per_day": 6.828777
+    },
+    {
+      "token": "tablo",
+      "videos": 3,
+      "median_log_views_per_day": 6.825259
+    },
+    {
+      "token": "sira",
+      "videos": 3,
+      "median_log_views_per_day": 6.816459
+    },
+    {
+      "token": "mie",
+      "videos": 3,
+      "median_log_views_per_day": 6.815289
+    },
+    {
+      "token": "karanlik",
+      "videos": 5,
+      "median_log_views_per_day": 6.807458
+    },
+    {
+      "token": "elon",
+      "videos": 3,
+      "median_log_views_per_day": 6.769654
+    },
+    {
+      "token": "deni",
+      "videos": 3,
+      "median_log_views_per_day": 6.764594
+    },
+    {
+      "token": "rit",
+      "videos": 3,
+      "median_log_views_per_day": 6.75645
+    },
+    {
+      "token": "imi",
+      "videos": 3,
+      "median_log_views_per_day": 6.752432
+    },
+    {
+      "token": "ass",
+      "videos": 4,
+      "median_log_views_per_day": 6.72489
+    },
+    {
+      "token": "are",
+      "videos": 5,
+      "median_log_views_per_day": 6.68125
+    },
+    {
+      "token": "eden",
+      "videos": 9,
+      "median_log_views_per_day": 6.658274
+    },
+    {
+      "token": "agi",
+      "videos": 4,
+      "median_log_views_per_day": 6.641555
+    },
+    {
+      "token": "way",
+      "videos": 3,
+      "median_log_views_per_day": 6.61133
+    },
+    {
+      "token": "geli",
+      "videos": 3,
+      "median_log_views_per_day": 6.520926
+    },
+    {
+      "token": "artemis",
+      "videos": 8,
+      "median_log_views_per_day": 6.495907
+    },
+    {
+      "token": "mii",
+      "videos": 4,
+      "median_log_views_per_day": 6.487334
+    },
+    {
+      "token": "yapay",
+      "videos": 11,
+      "median_log_views_per_day": 6.484831
+    },
+    {
+      "token": "gunes",
+      "videos": 4,
+      "median_log_views_per_day": 6.472473
+    },
+    {
+      "token": "pil",
+      "videos": 3,
+      "median_log_views_per_day": 6.470748
+    },
+    {
+      "token": "ari",
+      "videos": 4,
+      "median_log_views_per_day": 6.435108
+    },
+    {
+      "token": "gil",
+      "videos": 5,
+      "median_log_views_per_day": 6.43365
+    },
+    {
+      "token": "gerek",
+      "videos": 4,
+      "median_log_views_per_day": 6.428039
+    },
+    {
+      "token": "gidiyor",
+      "videos": 3,
+      "median_log_views_per_day": 6.421257
+    },
+    {
+      "token": "gun",
+      "videos": 6,
+      "median_log_views_per_day": 6.418379
+    },
+    {
+      "token": "otomobi",
+      "videos": 4,
+      "median_log_views_per_day": 6.414083
+    },
+    {
+      "token": "ayi",
+      "videos": 3,
+      "median_log_views_per_day": 6.413621
+    },
+    {
+      "token": "özeti",
+      "videos": 6,
+      "median_log_views_per_day": 6.404706
+    },
+    {
+      "token": "dünya",
+      "videos": 3,
+      "median_log_views_per_day": 6.395799
+    },
+    {
+      "token": "tavsi",
+      "videos": 3,
+      "median_log_views_per_day": 6.36693
+    },
+    {
+      "token": "yillik",
+      "videos": 3,
+      "median_log_views_per_day": 6.36693
+    },
+    {
+      "token": "keli",
+      "videos": 6,
+      "median_log_views_per_day": 6.330156
+    },
+    {
+      "token": "zeka",
+      "videos": 8,
+      "median_log_views_per_day": 6.326186
+    },
+    {
+      "token": "kim",
+      "videos": 4,
+      "median_log_views_per_day": 6.316851
+    },
+    {
+      "token": "daki",
+      "videos": 3,
+      "median_log_views_per_day": 6.316189
+    },
+    {
+      "token": "kuantum",
+      "videos": 3,
+      "median_log_views_per_day": 6.311244
+    },
+    {
+      "token": "tari",
+      "videos": 7,
+      "median_log_views_per_day": 6.293765
+    },
+    {
+      "token": "mağ",
+      "videos": 3,
+      "median_log_views_per_day": 6.286907
+    }
+  ],
+  "warning": "OCR is noisy and token groups are observational; manually review candidates before using them as title or thumbnail rules."
+}

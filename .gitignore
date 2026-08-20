@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+*.sqlite3
+*.npy
+*.onnx
+.chatbot-api-token
+.DS_Store

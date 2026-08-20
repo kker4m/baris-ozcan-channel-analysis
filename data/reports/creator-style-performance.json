@@ -1,0 +1,281 @@
+{
+  "videos": 800,
+  "target": "log_views_per_day",
+  "year_control": "Target centered by upload-year median before correlation.",
+  "associations": {
+    "words_per_sentence": {
+      "videos": 480,
+      "caption_scope": "manual_only",
+      "pearson_log_views_per_day": -0.202052,
+      "spearman_log_views_per_day": -0.114623,
+      "pearson_year_centered": -0.114324,
+      "spearman_year_centered": -0.022094
+    },
+    "syllables_per_word": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": -0.104334,
+      "spearman_log_views_per_day": -0.106074,
+      "pearson_year_centered": 0.008516,
+      "spearman_year_centered": -0.038682
+    },
+    "atesman_readability": {
+      "videos": 480,
+      "caption_scope": "manual_only",
+      "pearson_log_views_per_day": 0.236405,
+      "spearman_log_views_per_day": 0.122097,
+      "pearson_year_centered": 0.058952,
+      "spearman_year_centered": 0.041763
+    },
+    "msttr_500": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": -0.087346,
+      "spearman_log_views_per_day": -0.125683,
+      "pearson_year_centered": 0.030416,
+      "spearman_year_centered": 0.005749
+    },
+    "question_marks_per_1k": {
+      "videos": 480,
+      "caption_scope": "manual_only",
+      "pearson_log_views_per_day": -0.14467,
+      "spearman_log_views_per_day": -0.019366,
+      "pearson_year_centered": -0.021963,
+      "spearman_year_centered": 0.036598
+    },
+    "exclamation_marks_per_1k": {
+      "videos": 480,
+      "caption_scope": "manual_only",
+      "pearson_log_views_per_day": -0.100501,
+      "spearman_log_views_per_day": -0.018414,
+      "pearson_year_centered": -0.012067,
+      "spearman_year_centered": 0.097746
+    },
+    "profanity_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": 0.027939,
+      "spearman_log_views_per_day": 0.111967,
+      "pearson_year_centered": 0.001533,
+      "spearman_year_centered": 0.011056
+    },
+    "curiosity_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": 0.060965,
+      "spearman_log_views_per_day": 0.073164,
+      "pearson_year_centered": 0.035815,
+      "spearman_year_centered": 0.051537
+    },
+    "uncertainty_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": 0.049937,
+      "spearman_log_views_per_day": 0.10419,
+      "pearson_year_centered": 0.046406,
+      "spearman_year_centered": 0.088741
+    },
+    "analogy_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": -0.033536,
+      "spearman_log_views_per_day": 0.07743,
+      "pearson_year_centered": -0.065018,
+      "spearman_year_centered": -0.002215
+    },
+    "emphasis_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": 0.107503,
+      "spearman_log_views_per_day": 0.139359,
+      "pearson_year_centered": -0.002597,
+      "spearman_year_centered": 0.002057
+    },
+    "story_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": -0.056134,
+      "spearman_log_views_per_day": -0.016176,
+      "pearson_year_centered": 0.059911,
+      "spearman_year_centered": 0.068651
+    },
+    "direct_address_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": -0.127328,
+      "spearman_log_views_per_day": -0.127572,
+      "pearson_year_centered": 0.004853,
+      "spearman_year_centered": 0.002458
+    },
+    "first_person_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": -0.235369,
+      "spearman_log_views_per_day": -0.202718,
+      "pearson_year_centered": -0.044435,
+      "spearman_year_centered": -0.029415
+    },
+    "call_to_action_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": -0.394185,
+      "spearman_log_views_per_day": -0.309543,
+      "pearson_year_centered": -0.162125,
+      "spearman_year_centered": -0.152044
+    },
+    "intro_curiosity_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": 0.062931,
+      "spearman_log_views_per_day": 0.073243,
+      "pearson_year_centered": 0.009473,
+      "spearman_year_centered": 0.033367
+    },
+    "outro_cta_per_1k": {
+      "videos": 800,
+      "caption_scope": "all",
+      "pearson_log_views_per_day": -0.201187,
+      "spearman_log_views_per_day": -0.21487,
+      "pearson_year_centered": -0.060544,
+      "spearman_year_centered": -0.083795
+    }
+  },
+  "ranked_year_centered_signals": [
+    {
+      "feature": "call_to_action_per_1k",
+      "absolute_year_centered_spearman": 0.152044,
+      "direction": "negative"
+    },
+    {
+      "feature": "exclamation_marks_per_1k",
+      "absolute_year_centered_spearman": 0.097746,
+      "direction": "positive"
+    },
+    {
+      "feature": "uncertainty_per_1k",
+      "absolute_year_centered_spearman": 0.088741,
+      "direction": "positive"
+    },
+    {
+      "feature": "outro_cta_per_1k",
+      "absolute_year_centered_spearman": 0.083795,
+      "direction": "negative"
+    },
+    {
+      "feature": "story_per_1k",
+      "absolute_year_centered_spearman": 0.068651,
+      "direction": "positive"
+    },
+    {
+      "feature": "curiosity_per_1k",
+      "absolute_year_centered_spearman": 0.051537,
+      "direction": "positive"
+    },
+    {
+      "feature": "atesman_readability",
+      "absolute_year_centered_spearman": 0.041763,
+      "direction": "positive"
+    },
+    {
+      "feature": "syllables_per_word",
+      "absolute_year_centered_spearman": 0.038682,
+      "direction": "negative"
+    },
+    {
+      "feature": "question_marks_per_1k",
+      "absolute_year_centered_spearman": 0.036598,
+      "direction": "positive"
+    },
+    {
+      "feature": "intro_curiosity_per_1k",
+      "absolute_year_centered_spearman": 0.033367,
+      "direction": "positive"
+    },
+    {
+      "feature": "first_person_per_1k",
+      "absolute_year_centered_spearman": 0.029415,
+      "direction": "negative"
+    },
+    {
+      "feature": "words_per_sentence",
+      "absolute_year_centered_spearman": 0.022094,
+      "direction": "negative"
+    },
+    {
+      "feature": "profanity_per_1k",
+      "absolute_year_centered_spearman": 0.011056,
+      "direction": "positive"
+    },
+    {
+      "feature": "msttr_500",
+      "absolute_year_centered_spearman": 0.005749,
+      "direction": "positive"
+    },
+    {
+      "feature": "direct_address_per_1k",
+      "absolute_year_centered_spearman": 0.002458,
+      "direction": "positive"
+    },
+    {
+      "feature": "analogy_per_1k",
+      "absolute_year_centered_spearman": 0.002215,
+      "direction": "negative"
+    },
+    {
+      "feature": "emphasis_per_1k",
+      "absolute_year_centered_spearman": 0.002057,
+      "direction": "positive"
+    }
+  ],
+  "intro_hooks": {
+    "direct_address": {
+      "videos": 11,
+      "median_log_views_per_day": 5.773367,
+      "median_year_centered_target": -0.349606,
+      "years": 6
+    },
+    "question": {
+      "videos": 550,
+      "median_log_views_per_day": 6.240633,
+      "median_year_centered_target": 0.085825,
+      "years": 13
+    },
+    "statement": {
+      "videos": 9,
+      "median_log_views_per_day": 3.792318,
+      "median_year_centered_target": -0.342881,
+      "years": 5
+    },
+    "story": {
+      "videos": 21,
+      "median_log_views_per_day": 4.045927,
+      "median_year_centered_target": -0.504132,
+      "years": 8
+    },
+    "surprising_claim": {
+      "videos": 209,
+      "median_log_views_per_day": 6.126032,
+      "median_year_centered_target": -0.117461,
+      "years": 13
+    }
+  },
+  "caption_quality_check": {
+    "automatic": {
+      "videos": 320,
+      "median_words_per_sentence": 428.416667,
+      "median_question_marks_per_1k": 0.0,
+      "median_readability": 0.0
+    },
+    "manual": {
+      "videos": 480,
+      "median_words_per_sentence": 10.767781,
+      "median_question_marks_per_1k": 8.017531,
+      "median_readability": 66.86045
+    }
+  },
+  "interpretation": [
+    "Absolute correlations below 0.10 are negligible and 0.10-0.20 are weak exploratory signals.",
+    "Subtitle punctuation quality differs between manual and automatic captions.",
+    "No association in this report establishes a causal content rule."
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "sample_requested": 120,
+  "successfully_labeled": 120,
+  "failed": 0,
+  "fields": {
+    "main_subject": {
+      "illustration": {
+        "videos": 3,
+        "median_log_views_per_day": 5.672658,
+        "performance_groups": {
+          "high": 1,
+          "middle": 1,
+          "low": 1
+        }
+      },
+      "landscape": {
+        "videos": 5,
+        "median_log_views_per_day": 5.443578,
+        "performance_groups": {
+          "low": 3,
+          "middle": 2
+        }
+      },
+      "mixed": {
+        "videos": 9,
+        "median_log_views_per_day": 5.839748,
+        "performance_groups": {
+          "low": 3,
+          "middle": 3,
+          "high": 3
+        }
+      },
+      "object": {
+        "videos": 22,
+        "median_log_views_per_day": 6.586334,
+        "performance_groups": {
+          "low": 9,
+          "middle": 5,
+          "high": 8
+        }
+      },
+      "person": {
+        "videos": 73,
+        "median_log_views_per_day": 6.39107,
+        "performance_groups": {
+          "low": 16,
+          "middle": 29,
+          "high": 28
+        }
+      },
+      "screen": {
+        "videos": 7,
+        "median_log_views_per_day": 1.894944,
+        "performance_groups": {
+          "low": 7
+        }
+      },
+      "unknown": {
+        "videos": 1,
+        "median_log_views_per_day": 1.947235,
+        "performance_groups": {
+          "low": 1
+        }
+      }
+    },
+    "foreground_background_layout": {
+      "collage": {
+        "videos": 4,
+        "median_log_views_per_day": 6.632096,
+        "performance_groups": {
+          "middle": 3,
+          "high": 1
+        }
+      },
+      "scene": {
+        "videos": 1,
+        "median_log_views_per_day": 1.724188,
+        "performance_groups": {
+          "low": 1
+        }
+      },
+      "single_subject": {
+        "videos": 2,
+        "median_log_views_per_day": 7.329678,
+        "performance_groups": {
+          "middle": 1,
+          "high": 1
+        }
+      },
+      "split": {
+        "videos": 107,
+        "median_log_views_per_day": 6.337969,
+        "performance_groups": {
+          "low": 37,
+          "middle": 35,
+          "high": 35
+        }
+      },
+      "text_led": {
+        "videos": 4,
+        "median_log_views_per_day": 7.570741,
+        "performance_groups": {
+          "high": 3,
+          "low": 1
+        }
+      },
+      "unknown": {
+        "videos": 2,
+        "median_log_views_per_day": 4.399286,
+        "performance_groups": {
+          "low": 1,
+          "middle": 1
+        }
+      }
+    },
+    "text_position": {
+      "bottom": {
+        "videos": 39,
+        "median_log_views_per_day": 5.839748,
+        "performance_groups": {
+          "low": 12,
+          "middle": 10,
+          "high": 17
+        }
+      },
+      "center": {
+        "videos": 8,
+        "median_log_views_per_day": 7.058356,
+        "performance_groups": {
+          "low": 2,
+          "high": 4,
+          "middle": 2
+        }
+      },
+      "left": {
+        "videos": 18,
+        "median_log_views_per_day": 6.313716,
+        "performance_groups": {
+          "low": 6,
+          "middle": 8,
+          "high": 4
+        }
+      },
+      "multiple": {
+        "videos": 14,
+        "median_log_views_per_day": 6.360201,
+        "performance_groups": {
+          "middle": 4,
+          "high": 5,
+          "low": 5
+        }
+      },
+      "none": {
+        "videos": 1,
+        "median_log_views_per_day": 9.384075,
+        "performance_groups": {
+          "high": 1
+        }
+      },
+      "right": {
+        "videos": 11,
+        "median_log_views_per_day": 6.910074,
+        "performance_groups": {
+          "low": 3,
+          "middle": 3,
+          "high": 5
+        }
+      },
+      "top": {
+        "videos": 27,
+        "median_log_views_per_day": 6.322706,
+        "performance_groups": {
+          "low": 11,
+          "middle": 12,
+          "high": 4
+        }
+      },
+      "unknown": {
+        "videos": 2,
+        "median_log_views_per_day": 4.399286,
+        "performance_groups": {
+          "low": 1,
+          "middle": 1
+        }
+      }
+    },
+    "contrast_level": {
+      "high": {
+        "videos": 117,
+        "median_log_views_per_day": 6.357648,
+        "performance_groups": {
+          "low": 38,
+          "middle": 39,
+          "high": 40
+        }
+      },
+      "low": {
+        "videos": 1,
+        "median_log_views_per_day": 1.724188,
+        "performance_groups": {
+          "low": 1
+        }
+      },
+      "unknown": {
+        "videos": 2,
+        "median_log_views_per_day": 4.399286,
+        "performance_groups": {
+          "low": 1,
+          "middle": 1
+        }
+      }
+    },
+    "color_palette": {
+      "cool": {
+        "videos": 35,
+        "median_log_views_per_day": 7.219709,
+        "performance_groups": {
+          "low": 9,
+          "middle": 8,
+          "high": 18
+        }
+      },
+      "mixed": {
+        "videos": 5,
+        "median_log_views_per_day": 7.673976,
+        "performance_groups": {
+          "low": 1,
+          "middle": 1,
+          "high": 3
+        }
+      },
+      "neutral": {
+        "videos": 54,
+        "median_log_views_per_day": 5.572606,
+        "performance_groups": {
+          "low": 23,
+          "middle": 17,
+          "high": 14
+        }
+      },
+      "unknown": {
+        "videos": 2,
+        "median_log_views_per_day": 4.399286,
+        "performance_groups": {
+          "low": 1,
+          "middle": 1
+        }
+      },
+      "warm": {
+        "videos": 24,
+        "median_log_views_per_day": 6.360201,
+        "performance_groups": {
+          "low": 6,
+          "middle": 13,
+          "high": 5
+        }
+      }
+    },
+    "emotional_impression": {
+      "calm": {
+        "videos": 1,
+        "median_log_views_per_day": 1.724188,
+        "performance_groups": {
+          "low": 1
+        }
+      },
+      "curiosity": {
+        "videos": 109,
+        "median_log_views_per_day": 6.357819,
+        "performance_groups": {
+          "low": 35,
+          "middle": 36,
+          "high": 38
+        }
+      },
+      "joy": {
+        "videos": 2,
+        "median_log_views_per_day": 5.619995,
+        "performance_groups": {
+          "low": 2
+        }
+      },
+      "serious": {
+        "videos": 3,
+        "median_log_views_per_day": 5.731103,
+        "performance_groups": {
+          "high": 1,
+          "middle": 1,
+          "low": 1
+        }
+      },
+      "unknown": {
+        "videos": 2,
+        "median_log_views_per_day": 4.399286,
+        "performance_groups": {
+          "low": 1,
+          "middle": 1
+        }
+      },
+      "urgency": {
+        "videos": 2,
+        "median_log_views_per_day": 7.057988,
+        "performance_groups": {
+          "high": 1,
+          "middle": 1
+        }
+      },
+      "wonder": {
+        "videos": 1,
+        "median_log_views_per_day": 4.799111,
+        "performance_groups": {
+          "middle": 1
+        }
+      }
+    },
+    "thumbnail_hook_type": {
+      "claim": {
+        "videos": 37,
+        "median_log_views_per_day": 6.94167,
+        "performance_groups": {
+          "low": 8,
+          "middle": 13,
+          "high": 16
+        }
+      },
+      "event": {
+        "videos": 4,
+        "median_log_views_per_day": 5.721757,
+        "performance_groups": {
+          "high": 1,
+          "low": 2,
+          "middle": 1
+        }
+      },
+      "mystery": {
+        "videos": 15,
+        "median_log_views_per_day": 6.921576,
+        "performance_groups": {
+          "low": 3,
+          "middle": 5,
+          "high": 7
+        }
+      },
+      "number": {
+        "videos": 15,
+        "median_log_views_per_day": 1.996032,
+        "performance_groups": {
+          "low": 14,
+          "middle": 1
+        }
+      },
+      "object": {
+        "videos": 5,
+        "median_log_views_per_day": 5.001912,
+        "performance_groups": {
+          "low": 2,
+          "middle": 3
+        }
+      },
+      "person": {
+        "videos": 3,
+        "median_log_views_per_day": 4.837755,
+        "performance_groups": {
+          "middle": 3
+        }
+      },
+      "question": {
+        "videos": 29,
+        "median_log_views_per_day": 6.379933,
+        "performance_groups": {
+          "low": 7,
+          "middle": 10,
+          "high": 12
+        }
+      },
+      "scene": {
+        "videos": 1,
+        "median_log_views_per_day": 4.799111,
+        "performance_groups": {
+          "middle": 1
+        }
+      },
+      "transformation": {
+        "videos": 6,
+        "median_log_views_per_day": 6.098783,
+        "performance_groups": {
+          "middle": 2,
+          "high": 2,
+          "low": 2
+        }
+      },
+      "unknown": {
+        "videos": 5,
+        "median_log_views_per_day": 6.851337,
+        "performance_groups": {
+          "high": 2,
+          "low": 2,
+          "middle": 1
+        }
+      }
+    }
+  },
+  "face_count": {
+    "0": {
+      "videos": 30,
+      "median_log_views_per_day": 5.407989
+    },
+    "1": {
+      "videos": 75,
+      "median_log_views_per_day": 6.839235
+    },
+    "2+": {
+      "videos": 15,
+      "median_log_views_per_day": 5.336299
+    }
+  },
+  "schema_adjustments": {
+    "main_subject:Premiere Pro software interface->unknown": 1,
+    "foreground_background_layout:Foreground: Timeline and audio tracks, Background: Premiere Pro interface->unknown": 1,
+    "text_position:left|right->multiple": 8,
+    "text_position:left|center|right->multiple": 1,
+    "text_position:top|bottom->multiple": 5,
+    "text_position:Top and bottom of the image->unknown": 1,
+    "contrast_level:High->unknown": 1,
+    "color_palette:Dark theme with green and yellow highlights->unknown": 1,
+    "emotional_impression:Educational and technical->unknown": 1,
+    "thumbnail_hook_type:number|mystery->unknown": 3,
+    "thumbnail_hook_type:Instructional video thumbnail->unknown": 1
+  },
+  "interpretation_rule": "Treat groups with fewer than 10 videos as exploratory only. Labels describe sampled thumbnails and do not establish causal CTR effects."
+}

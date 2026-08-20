@@ -1,0 +1,8 @@
+{
+  "model": "qwen2.5vl:7b",
+  "sample_rows": 120,
+  "labeled": 120,
+  "errors": 0,
+  "sample": "thumbnail-vision-sample.csv",
+  "labels": "thumbnail-vision-labels.jsonl"
+}

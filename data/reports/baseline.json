@@ -1,0 +1,59 @@
+{
+  "channel": "Barış Özcan",
+  "catalog_videos": 849,
+  "videos_with_turkish_subtitles": 800,
+  "caption_source_counts": {
+    "automatic": 320,
+    "manual": 480,
+    "missing": 49
+  },
+  "total_duration_hours": 192.23,
+  "subtitle_duration_hours": 182.11,
+  "normalized_caption_words": 1200642,
+  "subtitle_cues": 198638,
+  "duration_buckets": {
+    "10m+": 577,
+    "5-10m": 189,
+    "<5m": 83
+  },
+  "year_video_counts": {
+    "2010": 2,
+    "2012": 1,
+    "2014": 3,
+    "2015": 81,
+    "2016": 114,
+    "2017": 69,
+    "2018": 80,
+    "2019": 74,
+    "2020": 75,
+    "2021": 68,
+    "2022": 62,
+    "2023": 67,
+    "2024": 63,
+    "2025": 54,
+    "2026": 36
+  },
+  "year_normalized_word_counts": {
+    "2010": 5,
+    "2012": 0,
+    "2014": 1218,
+    "2015": 39464,
+    "2016": 81350,
+    "2017": 74652,
+    "2018": 91337,
+    "2019": 96765,
+    "2020": 103420,
+    "2021": 119680,
+    "2022": 110798,
+    "2023": 118289,
+    "2024": 131412,
+    "2025": 121681,
+    "2026": 110571
+  },
+  "notes": [
+    "View, like, comment, thumbnail and description metadata are loaded from metadata-enrichment.jsonl.",
+    "comment_count remains nullable when YouTube returns NA.",
+    "Raw SRT and normalized transcript are both retained.",
+    "Manual captions take precedence over automatic captions when both exist."
+  ]
+}

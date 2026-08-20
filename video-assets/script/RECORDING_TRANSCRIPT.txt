@@ -1,0 +1,139 @@
+“Buradan ve şuradan giren veri miktarını hiç merak ettiniz mi?”
+
+Ben merak ettim.
+
+Ama bu kez tek bir videonun içindeki veriyi değil, videoların tamamının oluşturduğu büyük resmi merak ettim.
+
+Bir kanal yıllar boyunca yüzlerce video yayınladığında geride sadece bir oynatma listesi bırakmıyor. Başlıklarıyla, thumbnail'leriyle, anlattığı hikâyelerle ve kullandığı milyonlarca kelimeyle kendine ait bir parmak izi bırakıyor.
+
+Peki o parmak izini gerçekten ölçebilir miyiz?
+
+Barış Özcan'ın kanalındaki 849 videoyu, ulaşabildiğim 800 transcripti ve thumbnail kataloğunun tamamını analiz ettim. Sonra bu verilerle konuşabilen küçük bir yapay zekâ sistemi kurdum.
+
+Ama en ilginç sonuç, bulduğum bir başarı formülü değildi.
+
+Tam tersine, formül sandığımız bazı şeylerin veride neredeyse hiç çalışmamasıydı.
+
+Şimdi önce veri setini açalım.
+
+Katalogda 849 video var.
+
+Bunların 800 tanesinde kullanılabilir Türkçe transcript bulabildim. Manuel ve otomatik altyazıları temizleyip normalize ettiğimde elimde yaklaşık 1,2 milyon kelime kaldı.
+
+Her video için yayın tarihi, süre, izlenme, beğeni, yorum, başlık ve thumbnail bilgilerini aynı veri setinde birleştirdim.
+
+Analizi yaptığım andaki toplam izlenme görüntüsü yaklaşık 891,6 milyondu. Bu sayı sabit değil; video yayına girdikten sonra da izlenmeye devam ediyor. O nedenle eski ve yeni videoları yalnızca toplam izlenmeyle karşılaştırmadım. Yaş farkını azaltmak için günlük izlenme hızını da kullandım.
+
+Transcriptleri 3.775 anlamlı parçaya böldüm. Konuları ve duygu etiketlerini hafif bir içerik haritası olarak kullandım. 849 thumbnail'de renk, parlaklık ve kenar yoğunluğu gibi temel görsel özellikleri çıkardım. Ayrıca zamana ve performans grubuna göre dengelenmiş 120 thumbnail'i yerel bir görsel modelle etiketledim.
+
+Burada çok önemli bir sınır var.
+
+Bu çalışma “hangi thumbnail kesin tıklanır?” sorusunun sihirli cevabı değil. İzlenme sayısı; konu, yayın tarihi, dağıtım, izleyici ilgisi ve bizim ölçemediğimiz pek çok değişkenden etkileniyor. Bu yüzden birazdan göreceğiniz ilişkiler neden-sonuç değil. Bunlar, katalogda gördüğümüz betimsel sinyaller.
+
+İlk sorum şuydu: Kanalın toplam başarısı birkaç dev videonun omzunda mı duruyor?
+
+Öyle görünmüyor.
+
+En çok izlenen ilk 10 videonun katalogdaki toplam izlenmeden aldığı pay yaklaşık yüzde 8,4. Toplam izlenmenin yüzde 80'ine ulaşmak için videoların yaklaşık yüzde 45'ine ihtiyaç var.
+
+Bu, kanalın yalnızca birkaç viral videoya bağlı olmadığını gösteriyor. Güçlü bir arka katalog var. Eski videolar da yeni videolarla birlikte izlenme toplamını taşımaya devam ediyor.
+
+Bir başka deyişle burada tek gecelik bir patlamadan çok, yıllar boyunca biriken bir kütüphane etkisi görüyoruz.
+
+Bu bence videonun geri kalanı için önemli. Çünkü tek bir viral başlığın sırrını aramak yerine, tekrar tekrar çalışabilen editoryal sistemi aramamız gerekiyor.
+
+Paketleme tarafındaki en net betimsel ayrım video süresinde çıktı.
+
+Katalogda 10 dakikanın üzerindeki 577 videonun medyan izlenmesi yaklaşık 844 bin. Medyan günlük izlenme hızı ise 627.
+
+Beş ile 10 dakika arasındaki videolarda medyan izlenme yaklaşık 544 bin ve günlük hız 187.
+
+Beş dakikanın altındaki videolarda medyan izlenme yaklaşık 69 bin; günlük hız ise 17.
+
+Bu “videoyu uzatırsanız izlenir” demek değil. Uzun videoların konusu, yayınlandığı dönem veya kanalın gelişim evresi farklı olabilir. Fakat katalog içinde uzun formun kanalın ana anlatım biçimi olduğu çok net.
+
+Başlık uzunluğunda ise aynı ölçüde güçlü bir ayrım yok.
+
+Kısa başlıkların toplam medyan izlenmesi biraz daha yüksekken, 40–79 karakterlik orta uzunluktaki başlıkların günlük izlenme hızı daha yüksek. Yani veriden “başlığın tam olarak şu kadar karakter olsun” diye temiz bir reçete çıkaramıyoruz.
+
+Bu da iyi bir hatırlatma: İnsanlar cetvelle başlık seçmiyor.
+
+Sonra thumbnail'lere baktım.
+
+849 görselin tamamında doygunluk, parlaklık, kontrast ve kenar yoğunluğu gibi basit sinyalleri ölçtüm.
+
+Doygunlukla logaritmik izlenme arasındaki Pearson korelasyonu artı 0,233. Ortalama parlaklıkta artı 0,152. Kenar yoğunluğunda ise eksi 0,086.
+
+Bunların hiçbiri tek başına güçlü bir ilişki değil.
+
+Daha sonra 120 thumbnail'lik dengeli örneği görsel modele gösterdim. Model; yüz sayısı, metin konumu, ana özne, hook tipi, renk paleti ve kompozisyon gibi etiketler üretti.
+
+Peki bu daha detaylı görsel etiketler tahmini iyileştirdi mi?
+
+2025 ve sonrası videolardan oluşan zaman bazlı testte, başlık-süre-yıl gibi temel paketleme modelinin Spearman sıralama korelasyonu 0,288'di. İçerik ve thumbnail özellikleri eklendiğinde bu değer 0,103'e kadar düştü.
+
+Yani daha fazla özellik, otomatik olarak daha iyi tahmin demek değil.
+
+Bu örnek özellikle önemli. Çünkü model bir thumbnail'e çok ikna edici etiketler verebilir. “Yüz var, kontrast yüksek, merak uyandırıyor” diyebilir. Fakat ikna edici açıklama, tahmin gücüyle aynı şey değil.
+
+Görsel yapay zekâ burada bize thumbnail'leri düzenlemek ve örnekleri bulmak için yardımcı oluyor. Başarıyı açıklayan kesin bir makineye dönüşmüyor.
+
+Asıl belirgin parmak izi transcriptlerde ortaya çıktı.
+
+Noktalama işaretleri güvenilir olduğu için bu bölümde özellikle 480 manuel altyazıyı temel aldım.
+
+Medyan cümle uzunluğu yaklaşık 10,8 kelime. Ateşman okunabilirlik skoru yaklaşık 66,9. Yani anlatım teknik konulara girse bile cümleler çoğunlukla erişilebilir kalıyor.
+
+Ama daha ilginç olan açılışlar.
+
+800 transcript içinde 550 video bir soruyla başlıyor. 209 video şaşırtıcı bir iddia kullanıyor. Düz bir ifadeyle başlayanların sayısı ise yalnızca dokuz.
+
+Bu kanalın tekrar eden anlatım hareketi burada görünüyor:
+
+Önce tanıdık ya da somut bir şey gösteriliyor.
+
+Sonra bir soru açılıyor.
+
+Ardından o küçük gözlemin altındaki kavram açıklanıyor ve çerçeve giderek genişletiliyor.
+
+Teknik bir konu anlatılırken bile doğrudan hitap ve benzetmeler devreye giriyor. Fakat bunlar her cümlede üst üste yığılmıyor.
+
+Bunu tek bir cümleyle özetlemem gerekirse: erişilebilir, soru odaklı, benzetmelere açık ve izleyiciyle doğrudan konuşan bir anlatım.
+
+Fakat burada da bir “başarı düğmesi” bulmadık. Yıla göre normalize ettiğim stil özelliklerinin performansla ilişkileri zayıftı. En güçlü sinyalin mutlak Spearman değeri bile yaklaşık 0,15.
+
+Demek ki bir videoyu soru işaretiyle açmak, tek başına başarılı olmasını sağlamıyor.
+
+Sorunun arkasında anlatılmaya değer bir fikir olması gerekiyor.
+
+Son adımda bu analizi statik grafiklerden çıkarıp konuşulabilir hale getirdim.
+
+800 videonun transcriptlerini 3.775 parçalık semantik bir arama indeksine dönüştürdüm. Kullanıcı bir soru sorduğunda sistem önce ilgili transcript parçalarını buluyor.
+
+Arşiv Araştırması modunda ikinci bir kontrol, bu parçaların soruyu gerçekten cevaplayıp cevaplamadığını denetliyor. Kanıt varsa yanıtın yanında video ve saniye bağlantıları geliyor. Kanıt yoksa sistem bunu açıkça söylüyor.
+
+Merak Sohbeti modunda ise transcriptlerden çıkardığım yapısal anlatım profili kullanılıyor. Soru odaklı açılış, erişilebilir cümleler, ölçülü benzetmeler ve genişleyen çerçeve bütün cevaplara uygulanıyor.
+
+Bu bir insanın dijital kopyası değil. Kişisel anı veya görüş üretmiyor. Yaptığı şey, kamuya açık videolardan ölçtüğümüz anlatım yapılarını ve arşiv içeriğini kullanılabilir bir araştırma arayüzüne dönüştürmek.
+
+İşte bütün bu çalışmanın bence en kullanışlı çıktısı bu.
+
+Grafik size katalog hakkında bir sonuç gösteriyor. Chatbot ise sizi o sonucun dayandığı videoya ve cümleye geri götürüyor.
+
+Başta tek bir soru sorduk:
+
+Bir kanalın yıllar boyunca bıraktığı parmak izini ölçebilir miyiz?
+
+Kısmen, evet.
+
+Bu katalog birkaç viral videoya bağlı değil. Uzun form baskın. Thumbnail renkleri ve yapay zekâ etiketleri tek başına güvenilir bir başarı formülü vermiyor. En tekrarlanabilir özellik ise anlatımın yapısında: somut bir ayrıntıyla başlayan, soru soran, kavramı açan ve sonunda daha geniş bir fikre bağlanan bir akış.
+
+Fakat verinin bize söylemediği şey de en az bunlar kadar önemli.
+
+Korelasyon, neden değildir. Bir özelliği sayabiliyor olmamız, onun izlenmeyi yarattığı anlamına gelmez. Ve hiçbir model, anlatılmaya değer fikrin yerini tutmaz.
+
+Belki de kanalın asıl gücü tek bir formülde değil; yıllar boyunca aynı merak kasını farklı konularda tekrar tekrar çalıştırmasındadır.
+
+Tüm grafikler, özet tablolar, analiz kodları ve bu videonun kaynak defteri GitHub'da açık olacak.
+
+Bir sonraki videoda hangi kanalın sayılarla görünmeyen parmak izini çıkarmamı istersiniz?

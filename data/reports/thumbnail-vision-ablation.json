@@ -1,0 +1,54 @@
+{
+  "target": "log_views_per_day",
+  "sample": "120 thumbnails stratified by period and low/middle/high performance",
+  "split": {
+    "train": "<=2022",
+    "test": ">=2023"
+  },
+  "counts": {
+    "train": 81,
+    "test": 39
+  },
+  "results": {
+    "train_median": {
+      "videos": 39,
+      "mae": 1.712077,
+      "rmse": 2.1596,
+      "r2": -1.286194,
+      "spearman": null
+    },
+    "baseline": {
+      "videos": 39,
+      "mae": 1.115991,
+      "rmse": 1.44068,
+      "r2": -0.017423,
+      "spearman": 0.526316
+    },
+    "baseline_plus_content": {
+      "videos": 39,
+      "mae": 1.125165,
+      "rmse": 1.44513,
+      "r2": -0.023718,
+      "spearman": 0.493725
+    },
+    "baseline_plus_content_plus_basic_thumbnail": {
+      "videos": 39,
+      "mae": 1.113569,
+      "rmse": 1.546203,
+      "r2": -0.171924,
+      "spearman": 0.291093
+    },
+    "baseline_plus_content_plus_basic_plus_vision": {
+      "videos": 39,
+      "mae": 1.126194,
+      "rmse": 1.554911,
+      "r2": -0.185162,
+      "spearman": 0.27166
+    }
+  },
+  "interpretation": [
+    "Compare models only on this same fixed sample; lower MAE/RMSE and higher Spearman are better.",
+    "The outcome-stratified 120-video sample is useful for exploration but not population-level causal inference.",
+    "Vision labels are Qwen2.5-VL observations, not human-labeled ground truth."
+  ]
+}

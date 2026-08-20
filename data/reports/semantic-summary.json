@@ -1,0 +1,27 @@
+{
+  "method": "multilingual BERT chunk-to-label cosine similarity plus Turkish lexicon signals",
+  "topics": {
+    "teknoloji": 1291,
+    "psikoloji": 2332,
+    "uzay": 83,
+    "sinema": 12,
+    "kitap": 15,
+    "sanat_tasarım": 7,
+    "tarih": 18,
+    "bilim": 11,
+    "günlük_hayat": 6
+  },
+  "emotions": {
+    "nötr": 437,
+    "üzüntü": 1061,
+    "merak": 1205,
+    "mutluluk": 200,
+    "korku": 435,
+    "eğlence": 170,
+    "hayranlık": 130,
+    "şaşkınlık": 101,
+    "öfke": 36
+  },
+  "chunks": 3775,
+  "warning": "This is a reproducible baseline, not human-labeled ground truth; validate labels before training or publication."
+}

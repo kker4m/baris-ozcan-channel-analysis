@@ -1,0 +1,709 @@
+{
+  "videos_analyzed": 800,
+  "caption_sources": {
+    "automatic": 320,
+    "manual": 480
+  },
+  "medians": {
+    "words_per_sentence": 12.294398,
+    "syllables_per_word": 2.574939,
+    "atesman_readability": 62.90115,
+    "msttr_500": 0.711894,
+    "question_marks_per_1k": 5.208576,
+    "exclamation_marks_per_1k": 0.0,
+    "profanity_per_1k": 0.0,
+    "curiosity_per_1k": 3.896827,
+    "uncertainty_per_1k": 1.560875,
+    "analogy_per_1k": 6.896552,
+    "emphasis_per_1k": 5.053698,
+    "story_per_1k": 5.900292,
+    "direct_address_per_1k": 11.014229,
+    "first_person_per_1k": 14.08947,
+    "call_to_action_per_1k": 4.323663,
+    "intro_curiosity_per_1k": 4.640396,
+    "outro_cta_per_1k": 0.0
+  },
+  "medians_by_caption_source": {
+    "automatic": {
+      "words_per_sentence": 428.416667,
+      "syllables_per_word": 2.560352,
+      "atesman_readability": 0.0,
+      "msttr_500": 0.71023,
+      "question_marks_per_1k": 0.0,
+      "exclamation_marks_per_1k": 0.0,
+      "profanity_per_1k": 0.0,
+      "curiosity_per_1k": 3.581047,
+      "uncertainty_per_1k": 1.596219,
+      "analogy_per_1k": 7.050954,
+      "emphasis_per_1k": 6.020518,
+      "story_per_1k": 5.840608,
+      "direct_address_per_1k": 10.733275,
+      "first_person_per_1k": 13.814283,
+      "call_to_action_per_1k": 4.419729,
+      "intro_curiosity_per_1k": 5.012563,
+      "outro_cta_per_1k": 6.41052
+    },
+    "manual": {
+      "words_per_sentence": 10.767781,
+      "syllables_per_word": 2.583855,
+      "atesman_readability": 66.86045,
+      "msttr_500": 0.712847,
+      "question_marks_per_1k": 8.017531,
+      "exclamation_marks_per_1k": 0.784623,
+      "profanity_per_1k": 0.0,
+      "curiosity_per_1k": 4.115712,
+      "uncertainty_per_1k": 1.534928,
+      "analogy_per_1k": 6.842293,
+      "emphasis_per_1k": 4.529793,
+      "story_per_1k": 5.926551,
+      "direct_address_per_1k": 11.261261,
+      "first_person_per_1k": 14.224654,
+      "call_to_action_per_1k": 4.252306,
+      "intro_curiosity_per_1k": 4.107209,
+      "outro_cta_per_1k": 0.0
+    }
+  },
+  "readability_labels": {
+    "çok_kolay": 6,
+    "orta": 289,
+    "zor": 26,
+    "çok_zor": 271,
+    "kolay": 208
+  },
+  "intro_hook_types": {
+    "direct_address": {
+      "videos": 11,
+      "performance_videos": 11,
+      "median_log_views_per_day": 5.773367
+    },
+    "question": {
+      "videos": 550,
+      "performance_videos": 550,
+      "median_log_views_per_day": 6.240633
+    },
+    "statement": {
+      "videos": 9,
+      "performance_videos": 9,
+      "median_log_views_per_day": 3.792318
+    },
+    "story": {
+      "videos": 21,
+      "performance_videos": 21,
+      "median_log_views_per_day": 4.045927
+    },
+    "surprising_claim": {
+      "videos": 209,
+      "performance_videos": 209,
+      "median_log_views_per_day": 6.126032
+    }
+  },
+  "top_content_words": [
+    {
+      "word": "var",
+      "count": 5749
+    },
+    {
+      "word": "değil",
+      "count": 5154
+    },
+    {
+      "word": "kadar",
+      "count": 4886
+    },
+    {
+      "word": "çünkü",
+      "count": 3558
+    },
+    {
+      "word": "sadece",
+      "count": 3467
+    },
+    {
+      "word": "önce",
+      "count": 3126
+    },
+    {
+      "word": "şimdi",
+      "count": 2974
+    },
+    {
+      "word": "bile",
+      "count": 2817
+    },
+    {
+      "word": "büyük",
+      "count": 2600
+    },
+    {
+      "word": "bunu",
+      "count": 2473
+    },
+    {
+      "word": "aynı",
+      "count": 2308
+    },
+    {
+      "word": "ilk",
+      "count": 2194
+    },
+    {
+      "word": "yeni",
+      "count": 2180
+    },
+    {
+      "word": "işte",
+      "count": 2137
+    },
+    {
+      "word": "başka",
+      "count": 2124
+    },
+    {
+      "word": "i̇şte",
+      "count": 2112
+    },
+    {
+      "word": "şekilde",
+      "count": 2090
+    },
+    {
+      "word": "tam",
+      "count": 2075
+    },
+    {
+      "word": "zaman",
+      "count": 2073
+    },
+    {
+      "word": "evet",
+      "count": 2032
+    },
+    {
+      "word": "nasıl",
+      "count": 2024
+    },
+    {
+      "word": "yıl",
+      "count": 1921
+    },
+    {
+      "word": "kendi",
+      "count": 1913
+    },
+    {
+      "word": "onu",
+      "count": 1900
+    },
+    {
+      "word": "iyi",
+      "count": 1894
+    },
+    {
+      "word": "öyle",
+      "count": 1835
+    },
+    {
+      "word": "tüm",
+      "count": 1809
+    },
+    {
+      "word": "farklı",
+      "count": 1782
+    },
+    {
+      "word": "biraz",
+      "count": 1736
+    },
+    {
+      "word": "anda",
+      "count": 1717
+    },
+    {
+      "word": "iki",
+      "count": 1694
+    },
+    {
+      "word": "yok",
+      "count": 1692
+    },
+    {
+      "word": "aslında",
+      "count": 1623
+    },
+    {
+      "word": "olduğunu",
+      "count": 1614
+    },
+    {
+      "word": "biri",
+      "count": 1610
+    },
+    {
+      "word": "önemli",
+      "count": 1597
+    },
+    {
+      "word": "olduğu",
+      "count": 1584
+    },
+    {
+      "word": "hatta",
+      "count": 1577
+    },
+    {
+      "word": "peki",
+      "count": 1573
+    },
+    {
+      "word": "yüzden",
+      "count": 1561
+    },
+    {
+      "word": "yine",
+      "count": 1551
+    },
+    {
+      "word": "bazı",
+      "count": 1511
+    },
+    {
+      "word": "doğru",
+      "count": 1494
+    },
+    {
+      "word": "eğer",
+      "count": 1479
+    },
+    {
+      "word": "size",
+      "count": 1474
+    },
+    {
+      "word": "bunun",
+      "count": 1466
+    },
+    {
+      "word": "hemen",
+      "count": 1462
+    },
+    {
+      "word": "gün",
+      "count": 1457
+    },
+    {
+      "word": "burada",
+      "count": 1435
+    },
+    {
+      "word": "belki",
+      "count": 1432
+    },
+    {
+      "word": "içinde",
+      "count": 1430
+    },
+    {
+      "word": "tek",
+      "count": 1381
+    },
+    {
+      "word": "kez",
+      "count": 1366
+    },
+    {
+      "word": "son",
+      "count": 1355
+    },
+    {
+      "word": "benim",
+      "count": 1354
+    },
+    {
+      "word": "devam",
+      "count": 1339
+    },
+    {
+      "word": "uzay",
+      "count": 1327
+    },
+    {
+      "word": "göre",
+      "count": 1311
+    },
+    {
+      "word": "dünyanın",
+      "count": 1309
+    },
+    {
+      "word": "hiç",
+      "count": 1277
+    },
+    {
+      "word": "zaten",
+      "count": 1268
+    },
+    {
+      "word": "pek",
+      "count": 1248
+    },
+    {
+      "word": "gerçekten",
+      "count": 1245
+    },
+    {
+      "word": "bizim",
+      "count": 1231
+    },
+    {
+      "word": "insan",
+      "count": 1221
+    },
+    {
+      "word": "fakat",
+      "count": 1217
+    },
+    {
+      "word": "fazla",
+      "count": 1213
+    },
+    {
+      "word": "mesela",
+      "count": 1197
+    },
+    {
+      "word": "yapay",
+      "count": 1181
+    },
+    {
+      "word": "müzik",
+      "count": 1159
+    },
+    {
+      "word": "güzel",
+      "count": 1146
+    },
+    {
+      "word": "bize",
+      "count": 1126
+    },
+    {
+      "word": "küçük",
+      "count": 1087
+    },
+    {
+      "word": "orada",
+      "count": 1062
+    },
+    {
+      "word": "tabii",
+      "count": 1046
+    },
+    {
+      "word": "buna",
+      "count": 1039
+    },
+    {
+      "word": "ediyor",
+      "count": 1016
+    },
+    {
+      "word": "gerçek",
+      "count": 995
+    },
+    {
+      "word": "geliyor",
+      "count": 978
+    },
+    {
+      "word": "şeyler",
+      "count": 972
+    },
+    {
+      "word": "dünya",
+      "count": 972
+    },
+    {
+      "word": "ilgili",
+      "count": 968
+    },
+    {
+      "word": "bakın",
+      "count": 966
+    },
+    {
+      "word": "bunlar",
+      "count": 946
+    },
+    {
+      "word": "yerine",
+      "count": 911
+    },
+    {
+      "word": "olabilir",
+      "count": 905
+    },
+    {
+      "word": "tarafından",
+      "count": 891
+    },
+    {
+      "word": "şöyle",
+      "count": 889
+    },
+    {
+      "word": "bugün",
+      "count": 878
+    },
+    {
+      "word": "yer",
+      "count": 877
+    },
+    {
+      "word": "siz",
+      "count": 860
+    },
+    {
+      "word": "diğer",
+      "count": 860
+    },
+    {
+      "word": "ortaya",
+      "count": 855
+    },
+    {
+      "word": "bilim",
+      "count": 851
+    },
+    {
+      "word": "kişi",
+      "count": 833
+    },
+    {
+      "word": "oldu",
+      "count": 829
+    },
+    {
+      "word": "hani",
+      "count": 822
+    },
+    {
+      "word": "bunları",
+      "count": 795
+    },
+    {
+      "word": "uzun",
+      "count": 793
+    },
+    {
+      "word": "ona",
+      "count": 782
+    }
+  ],
+  "recurring_phrases_by_video_coverage": [
+    {
+      "phrase": "bir şekilde",
+      "videos": 481
+    },
+    {
+      "phrase": "başka bir",
+      "videos": 431
+    },
+    {
+      "phrase": "büyük bir",
+      "videos": 392
+    },
+    {
+      "phrase": "yeni bir",
+      "videos": 362
+    },
+    {
+      "phrase": "pek çok",
+      "videos": 348
+    },
+    {
+      "phrase": "aynı zamanda",
+      "videos": 344
+    },
+    {
+      "phrase": "tam olarak",
+      "videos": 333
+    },
+    {
+      "phrase": "daha önce",
+      "videos": 307
+    },
+    {
+      "phrase": "bir başka",
+      "videos": 292
+    },
+    {
+      "phrase": "biraz daha",
+      "videos": 292
+    },
+    {
+      "phrase": "daha iyi",
+      "videos": 291
+    },
+    {
+      "phrase": "bir şeyler",
+      "videos": 270
+    },
+    {
+      "phrase": "olduğu için",
+      "videos": 268
+    },
+    {
+      "phrase": "daha fazla",
+      "videos": 262
+    },
+    {
+      "phrase": "olduğu gibi",
+      "videos": 262
+    },
+    {
+      "phrase": "şöyle bir",
+      "videos": 260
+    },
+    {
+      "phrase": "bir yandan",
+      "videos": 249
+    },
+    {
+      "phrase": "herhangi bir",
+      "videos": 248
+    },
+    {
+      "phrase": "önemli bir",
+      "videos": 246
+    },
+    {
+      "phrase": "sadece bir",
+      "videos": 245
+    },
+    {
+      "phrase": "çok önemli",
+      "videos": 239
+    },
+    {
+      "phrase": "tek bir",
+      "videos": 236
+    },
+    {
+      "phrase": "küçük bir",
+      "videos": 232
+    },
+    {
+      "phrase": "güzel bir",
+      "videos": 231
+    },
+    {
+      "phrase": "biliyor musunuz",
+      "videos": 230
+    },
+    {
+      "phrase": "her zaman",
+      "videos": 228
+    },
+    {
+      "phrase": "bir gün",
+      "videos": 221
+    },
+    {
+      "phrase": "devam ediyor",
+      "videos": 220
+    },
+    {
+      "phrase": "çok güzel",
+      "videos": 220
+    },
+    {
+      "phrase": "bir süre",
+      "videos": 219
+    },
+    {
+      "phrase": "öyle bir",
+      "videos": 214
+    },
+    {
+      "phrase": "ilk kez",
+      "videos": 213
+    },
+    {
+      "phrase": "bunun için",
+      "videos": 209
+    },
+    {
+      "phrase": "çok büyük",
+      "videos": 207
+    },
+    {
+      "phrase": "yıl önce",
+      "videos": 204
+    },
+    {
+      "phrase": "bugüne kadar",
+      "videos": 199
+    },
+    {
+      "phrase": "özel bir",
+      "videos": 190
+    },
+    {
+      "phrase": "son derece",
+      "videos": 189
+    },
+    {
+      "phrase": "her şeyi",
+      "videos": 188
+    },
+    {
+      "phrase": "gördüğünüz gibi",
+      "videos": 186
+    },
+    {
+      "phrase": "kısa bir",
+      "videos": 184
+    },
+    {
+      "phrase": "bir takım",
+      "videos": 181
+    },
+    {
+      "phrase": "her gün",
+      "videos": 180
+    },
+    {
+      "phrase": "iyi bir",
+      "videos": 178
+    },
+    {
+      "phrase": "değil ama",
+      "videos": 178
+    },
+    {
+      "phrase": "nasıl bir",
+      "videos": 177
+    },
+    {
+      "phrase": "bir çeşit",
+      "videos": 174
+    },
+    {
+      "phrase": "var ama",
+      "videos": 170
+    },
+    {
+      "phrase": "farklı bir",
+      "videos": 169
+    },
+    {
+      "phrase": "bir kez",
+      "videos": 169
+    }
+  ],
+  "warnings": [
+    "Ateşman and sentence metrics depend on subtitle punctuation quality.",
+    "Automatic captions may suppress punctuation and distort sentence or hook measurements.",
+    "Style-performance associations are observational and must not be interpreted as causal."
+  ]
+}

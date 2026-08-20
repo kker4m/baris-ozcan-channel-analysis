@@ -1,0 +1,81 @@
+{
+  "as_of": "2026-08-20",
+  "target": "log_views_per_day",
+  "split": {
+    "train": "<=2023",
+    "validation": "2024",
+    "test": ">=2025"
+  },
+  "counts": {
+    "train": 696,
+    "validation": 63,
+    "test": 90
+  },
+  "results": {
+    "global_median": {
+      "validation_2024": {
+        "videos": 63,
+        "mae": 1.022319,
+        "rmse": 1.184347,
+        "r2": -2.500687,
+        "spearman": 0.385657
+      },
+      "test_2025_plus": {
+        "videos": 90,
+        "mae": 1.499181,
+        "rmse": 1.730095,
+        "r2": -2.808464,
+        "spearman": 0.349204
+      }
+    },
+    "baseline_packaging": {
+      "validation_2024": {
+        "videos": 63,
+        "mae": 0.577993,
+        "rmse": 0.725776,
+        "r2": -0.314621,
+        "spearman": 0.169835
+      },
+      "test_2025_plus": {
+        "videos": 90,
+        "mae": 0.889621,
+        "rmse": 1.142001,
+        "r2": -0.659369,
+        "spearman": 0.288357
+      }
+    },
+    "baseline_plus_content": {
+      "validation_2024": {
+        "videos": 63,
+        "mae": 0.57394,
+        "rmse": 0.719443,
+        "r2": -0.291779,
+        "spearman": 0.244096
+      },
+      "test_2025_plus": {
+        "videos": 90,
+        "mae": 0.941109,
+        "rmse": 1.185461,
+        "r2": -0.78807,
+        "spearman": 0.176754
+      }
+    },
+    "baseline_plus_content_plus_thumbnail": {
+      "validation_2024": {
+        "videos": 63,
+        "mae": 0.582605,
+        "rmse": 0.735803,
+        "r2": -0.351195,
+        "spearman": 0.270065
+      },
+      "test_2025_plus": {
+        "videos": 90,
+        "mae": 0.948685,
+        "rmse": 1.197013,
+        "r2": -0.823089,
+        "spearman": 0.103379
+      }
+    }
+  },
+  "interpretation": "Predictive ablation only; feature gains do not establish causal thumbnail or topic effects."
+}

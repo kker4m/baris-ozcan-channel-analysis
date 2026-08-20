@@ -1,0 +1,308 @@
+{
+  "status": "complete_for_lightweight_video_analysis",
+  "scope": {
+    "catalog_videos": 849,
+    "transcript_videos": 800,
+    "thumbnail_videos": 849,
+    "vision_labeled_sample": 120,
+    "semantic_chunks": 3775
+  },
+  "channel_shape": {
+    "total_views_snapshot": 891593029,
+    "median_views": 718106,
+    "view_gini": 0.502897,
+    "top_10_view_share": 0.083935,
+    "catalog_share_for_80pct_views": 0.451119,
+    "median_days_between_uploads": 5.0,
+    "takeaway": "Views are distributed across a broad back catalog rather than being dominated by a handful of viral uploads."
+  },
+  "packaging": {
+    "duration_groups": {
+      "10m+": {
+        "videos": 577,
+        "median_views": 843727,
+        "median_views_per_day": 627.4175,
+        "median_engagement_rate": 0.045616
+      },
+      "5-10m": {
+        "videos": 189,
+        "median_views": 543500,
+        "median_views_per_day": 186.5424,
+        "median_engagement_rate": 0.045189
+      },
+      "<5m": {
+        "videos": 83,
+        "median_views": 68644,
+        "median_views_per_day": 17.1605,
+        "median_engagement_rate": 0.022706
+      }
+    },
+    "title_length_groups": {
+      "40-79c": {
+        "videos": 424,
+        "median_views": 708976.0,
+        "median_views_per_day": 506.37835,
+        "median_engagement_rate": 0.041869
+      },
+      "80c+": {
+        "videos": 33,
+        "median_views": 650413,
+        "median_views_per_day": 425.6105,
+        "median_engagement_rate": 0.044662
+      },
+      "<40c": {
+        "videos": 392,
+        "median_views": 737596.5,
+        "median_views_per_day": 405.97175,
+        "median_engagement_rate": 0.046645
+      }
+    },
+    "basic_thumbnail_correlations": {
+      "brightness_mean": {
+        "videos": 849,
+        "pearson_log_views": 0.152197
+      },
+      "saturation_mean": {
+        "videos": 849,
+        "pearson_log_views": 0.232684
+      },
+      "edge_density": {
+        "videos": 849,
+        "pearson_log_views": -0.086117
+      },
+      "brightness_std": {
+        "videos": 849,
+        "pearson_log_views": 0.083895
+      }
+    },
+    "full_catalog_temporal_ablation": {
+      "global_median": {
+        "validation_2024": {
+          "videos": 63,
+          "mae": 1.022319,
+          "rmse": 1.184347,
+          "r2": -2.500687,
+          "spearman": 0.385657
+        },
+        "test_2025_plus": {
+          "videos": 90,
+          "mae": 1.499181,
+          "rmse": 1.730095,
+          "r2": -2.808464,
+          "spearman": 0.349204
+        }
+      },
+      "baseline_packaging": {
+        "validation_2024": {
+          "videos": 63,
+          "mae": 0.577993,
+          "rmse": 0.725776,
+          "r2": -0.314621,
+          "spearman": 0.169835
+        },
+        "test_2025_plus": {
+          "videos": 90,
+          "mae": 0.889621,
+          "rmse": 1.142001,
+          "r2": -0.659369,
+          "spearman": 0.288357
+        }
+      },
+      "baseline_plus_content": {
+        "validation_2024": {
+          "videos": 63,
+          "mae": 0.57394,
+          "rmse": 0.719443,
+          "r2": -0.291779,
+          "spearman": 0.244096
+        },
+        "test_2025_plus": {
+          "videos": 90,
+          "mae": 0.941109,
+          "rmse": 1.185461,
+          "r2": -0.78807,
+          "spearman": 0.176754
+        }
+      },
+      "baseline_plus_content_plus_thumbnail": {
+        "validation_2024": {
+          "videos": 63,
+          "mae": 0.582605,
+          "rmse": 0.735803,
+          "r2": -0.351195,
+          "spearman": 0.270065
+        },
+        "test_2025_plus": {
+          "videos": 90,
+          "mae": 0.948685,
+          "rmse": 1.197013,
+          "r2": -0.823089,
+          "spearman": 0.103379
+        }
+      }
+    },
+    "vision_sample_temporal_ablation": {
+      "train_median": {
+        "videos": 39,
+        "mae": 1.712077,
+        "rmse": 2.1596,
+        "r2": -1.286194,
+        "spearman": null
+      },
+      "baseline": {
+        "videos": 39,
+        "mae": 1.115991,
+        "rmse": 1.44068,
+        "r2": -0.017423,
+        "spearman": 0.526316
+      },
+      "baseline_plus_content": {
+        "videos": 39,
+        "mae": 1.125165,
+        "rmse": 1.44513,
+        "r2": -0.023718,
+        "spearman": 0.493725
+      },
+      "baseline_plus_content_plus_basic_thumbnail": {
+        "videos": 39,
+        "mae": 1.113569,
+        "rmse": 1.546203,
+        "r2": -0.171924,
+        "spearman": 0.291093
+      },
+      "baseline_plus_content_plus_basic_plus_vision": {
+        "videos": 39,
+        "mae": 1.126194,
+        "rmse": 1.554911,
+        "r2": -0.185162,
+        "spearman": 0.27166
+      }
+    },
+    "takeaway": "Long-form format is the clearest descriptive packaging split. Color and Qwen visual labels did not add stable predictive value beyond the temporal baseline."
+  },
+  "content_baseline": {
+    "topic_chunk_counts": {
+      "teknoloji": 1291,
+      "psikoloji": 2332,
+      "uzay": 83,
+      "sinema": 12,
+      "kitap": 15,
+      "sanat_tasarım": 7,
+      "tarih": 18,
+      "bilim": 11,
+      "günlük_hayat": 6
+    },
+    "emotion_chunk_counts": {
+      "nötr": 437,
+      "üzüntü": 1061,
+      "merak": 1205,
+      "mutluluk": 200,
+      "korku": 435,
+      "eğlence": 170,
+      "hayranlık": 130,
+      "şaşkınlık": 101,
+      "öfke": 36
+    },
+    "takeaway": "Topic and emotion labels are usable as lightweight editorial navigation, not as ground-truth channel psychology."
+  },
+  "creator_voice": {
+    "manual_caption_videos": 480,
+    "median_words_per_sentence": 10.767781,
+    "median_atesman_readability": 66.86045,
+    "questions_per_1000_words": 8.017531,
+    "analogy_markers_per_1000_words": 6.842293,
+    "direct_address_per_1000_words": 11.261261,
+    "intro_hook_types": {
+      "direct_address": {
+        "videos": 11,
+        "performance_videos": 11,
+        "median_log_views_per_day": 5.773367
+      },
+      "question": {
+        "videos": 550,
+        "performance_videos": 550,
+        "median_log_views_per_day": 6.240633
+      },
+      "statement": {
+        "videos": 9,
+        "performance_videos": 9,
+        "median_log_views_per_day": 3.792318
+      },
+      "story": {
+        "videos": 21,
+        "performance_videos": 21,
+        "median_log_views_per_day": 4.045927
+      },
+      "surprising_claim": {
+        "videos": 209,
+        "performance_videos": 209,
+        "median_log_views_per_day": 6.126032
+      }
+    },
+    "recurring_transitions": [
+      {
+        "phrase": "bir şekilde",
+        "videos": 481
+      },
+      {
+        "phrase": "başka bir",
+        "videos": 431
+      },
+      {
+        "phrase": "büyük bir",
+        "videos": 392
+      },
+      {
+        "phrase": "yeni bir",
+        "videos": 362
+      },
+      {
+        "phrase": "pek çok",
+        "videos": 348
+      },
+      {
+        "phrase": "aynı zamanda",
+        "videos": 344
+      },
+      {
+        "phrase": "tam olarak",
+        "videos": 333
+      },
+      {
+        "phrase": "daha önce",
+        "videos": 307
+      },
+      {
+        "phrase": "bir başka",
+        "videos": 292
+      },
+      {
+        "phrase": "biraz daha",
+        "videos": 292
+      }
+    ],
+    "strongest_year_centered_style_signal": {
+      "feature": "call_to_action_per_1k",
+      "absolute_year_centered_spearman": 0.152044,
+      "direction": "negative"
+    },
+    "takeaway": "The repeatable voice is accessible, question-led, analogy-friendly, and directly addressed; no measured style signal is strong enough to become a performance rule."
+  },
+  "chatbot_readiness": {
+    "interface": "chat_creator.py",
+    "validator": "validate_chatbot.py",
+    "profile": "creator-chatbot-profile.json",
+    "retrieval_index": "retrieval-index.json",
+    "retrieval_chunks": 3775,
+    "retrieval_dimensions": 384,
+    "ready": true,
+    "next": "Use the local CLI in the video demo or add an optional visual interface."
+  },
+  "editorial_guardrails": [
+    "Use age-normalized views/day for performance comparisons.",
+    "Treat all correlations and model gains as associations, not causes.",
+    "Use manual captions for punctuation, sentence length, and readability claims.",
+    "Describe the 120-thumbnail vision findings as an exploratory sample.",
+    "Keep the video entertaining: lead with channel scale, back-catalog breadth, long-form dominance, and the question-led voice fingerprint."
+  ]
+}
