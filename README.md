@@ -8,6 +8,7 @@ The analysis snapshot was collected on **2026-08-20**. View, like and comment co
 
 - [`video-assets/script/VIDEO_SCRIPT.md`](video-assets/script/VIDEO_SCRIPT.md) — full spoken script with edit and screen cues
 - [`video-assets/script/RECORDING_TRANSCRIPT.txt`](video-assets/script/RECORDING_TRANSCRIPT.txt) — clean recording copy
+- [`video-assets/script/AI_ASSISTED_INTRO.md`](video-assets/script/AI_ASSISTED_INTRO.md) — transcript-profile chatbot draft, evidence-corrected for recording
 - [`video-assets/script/CLAIM_LEDGER.md`](video-assets/script/CLAIM_LEDGER.md) — claim-by-claim evidence and limitations
 - [`video-assets/script/SOURCES.md`](video-assets/script/SOURCES.md) — auditable sources and opening clip
 - [`video-assets/charts/`](video-assets/charts/) — six presentation-ready PNG charts
