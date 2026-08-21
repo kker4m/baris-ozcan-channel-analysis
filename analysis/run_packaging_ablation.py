@@ -26,12 +26,15 @@ def read_csv(path: Path) -> list[dict]:
 
 
 def score(y_true: np.ndarray, prediction: np.ndarray) -> dict:
+    spearman = None
+    if len(np.unique(y_true)) > 1 and len(np.unique(prediction)) > 1:
+        spearman = round(float(pd.Series(y_true).corr(pd.Series(prediction), method="spearman")), 6)
     return {
         "videos": int(len(y_true)),
         "mae": round(float(mean_absolute_error(y_true, prediction)), 6),
         "rmse": round(float(math.sqrt(mean_squared_error(y_true, prediction))), 6),
         "r2": round(float(r2_score(y_true, prediction)), 6),
-        "spearman": round(float(np.corrcoef(np.argsort(np.argsort(y_true)), np.argsort(np.argsort(prediction)))[0, 1]), 6),
+        "spearman": spearman,
     }
 
 

@@ -80,16 +80,6 @@ def main() -> None:
             "videos_per_year": {year: values["videos"] for year, values in by_year.items()},
         },
         "by_year": by_year,
-        "top_videos": [
-            {
-                "id": row["id"],
-                "title": row["title"],
-                "upload_date": row["upload_date"],
-                "views": int(row["view_count"]),
-                "views_per_day": float(row["views_per_day"]),
-            }
-            for row in ranked[:10]
-        ],
         "warning": "View counts are a current snapshot; older videos have had more time to accumulate lifetime views.",
     }
     (report_dir / "channel-distribution.json").write_text(

@@ -82,62 +82,62 @@
           "mae": 1.022319,
           "rmse": 1.184347,
           "r2": -2.500687,
-          "spearman": 0.385657
+          "spearman": null
         },
         "test_2025_plus": {
           "videos": 90,
           "mae": 1.499181,
           "rmse": 1.730095,
           "r2": -2.808464,
-          "spearman": 0.349204
+          "spearman": null
         }
       },
       "baseline_packaging": {
         "validation_2024": {
           "videos": 63,
-          "mae": 0.577993,
-          "rmse": 0.725776,
-          "r2": -0.314621,
-          "spearman": 0.169835
+          "mae": 0.578191,
+          "rmse": 0.725895,
+          "r2": -0.315051,
+          "spearman": 0.168251
         },
         "test_2025_plus": {
           "videos": 90,
-          "mae": 0.889621,
-          "rmse": 1.142001,
-          "r2": -0.659369,
-          "spearman": 0.288357
+          "mae": 0.889429,
+          "rmse": 1.141673,
+          "r2": -0.658416,
+          "spearman": 0.28727
         }
       },
       "baseline_plus_content": {
         "validation_2024": {
           "videos": 63,
-          "mae": 0.57394,
-          "rmse": 0.719443,
-          "r2": -0.291779,
-          "spearman": 0.244096
+          "mae": 0.574259,
+          "rmse": 0.71962,
+          "r2": -0.292414,
+          "spearman": 0.247504
         },
         "test_2025_plus": {
           "videos": 90,
-          "mae": 0.941109,
-          "rmse": 1.185461,
-          "r2": -0.78807,
-          "spearman": 0.176754
+          "mae": 0.94091,
+          "rmse": 1.185445,
+          "r2": -0.788021,
+          "spearman": 0.178631
         }
       },
       "baseline_plus_content_plus_thumbnail": {
         "validation_2024": {
           "videos": 63,
-          "mae": 0.582605,
-          "rmse": 0.735803,
-          "r2": -0.351195,
-          "spearman": 0.270065
+          "mae": 0.581659,
+          "rmse": 0.735279,
+          "r2": -0.349273,
+          "spearman": 0.271505
         },
         "test_2025_plus": {
           "videos": 90,
-          "mae": 0.948685,
-          "rmse": 1.197013,
-          "r2": -0.823089,
-          "spearman": 0.103379
+          "mae": 0.948831,
+          "rmse": 1.19671,
+          "r2": -0.822166,
+          "spearman": 0.101683
         }
       }
     },
@@ -178,7 +178,7 @@
         "spearman": 0.27166
       }
     },
-    "takeaway": "Long-form format is the clearest descriptive packaging split. Color and Qwen visual labels did not add stable predictive value beyond the temporal baseline."
+    "takeaway": "Long-form format is the clearest descriptive packaging split. Basic full-catalog color features and exploratory Qwen labels, evaluated in separate temporal tests, did not add stable predictive value beyond their respective baselines."
   },
   "content_baseline": {
     "topic_chunk_counts": {

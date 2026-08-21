@@ -12,7 +12,8 @@ The analysis snapshot was collected on **2026-08-20**. View, like and comment co
 - [`video-assets/script/CLAIM_LEDGER.md`](video-assets/script/CLAIM_LEDGER.md) — claim-by-claim evidence and limitations
 - [`video-assets/script/SOURCES.md`](video-assets/script/SOURCES.md) — auditable sources and opening clip
 - [`video-assets/charts/`](video-assets/charts/) — six presentation-ready PNG charts
-- [`video-assets/thumbnail-samples/`](video-assets/thumbnail-samples/) — 12-thumbnail contact sheet and manifest
+- [`video-assets/thumbnail-samples/contact-sheet-manifest.csv`](video-assets/thumbnail-samples/contact-sheet-manifest.csv) — source attribution for the locally reviewed thumbnail sample
+- [`video-assets/presenter/`](video-assets/presenter/) — keyboard-controlled 16:9 metric deck with hidden speaker notes
 
 ## Analysis coverage
 
@@ -30,28 +31,36 @@ The analysis snapshot was collected on **2026-08-20**. View, like and comment co
 
 1. **Broad back catalog:** the top 10 videos account for about 8.4% of snapshot views; roughly 45.1% of the catalog is required to reach 80% of views.
 2. **Long form is the clearest descriptive split:** 10-minute-plus videos dominate the catalog and have the highest median views/day. This is association, not proof that extending a video causes views.
-3. **No magic thumbnail formula:** saturation and brightness show weak full-catalog correlations; richer Qwen vision labels did not improve the out-of-time prediction test.
-4. **Question-led voice fingerprint:** 550 of 800 transcript openings were classified as questions; 209 used a surprising claim. Punctuation-sensitive measurements rely on manual captions.
+3. **No magic thumbnail formula:** saturation and brightness show weak full-catalog correlations; a separate exploratory Qwen vision experiment also failed to improve its temporal baseline.
+4. **Question-led voice fingerprint:** a rule-based classifier found question-oriented signals in the first 90 seconds of 550 of 800 transcript-backed videos; 209 were classified as surprising claims. Punctuation-sensitive measurements rely on manual captions.
 5. **No measured style feature is a strong performance rule:** all year-centered style associations are weak and non-causal.
 
 ## Repository layout
 
 ```text
 analysis/                 Analysis and chart-generation scripts
-data/reports/             Curated derived JSON, CSV and JSONL outputs
+data/reports/             Curated aggregate JSON and CSV outputs
 video-assets/charts/      Video-ready graphics
-video-assets/script/      Script, transcript, claim ledger and sources
-video-assets/thumbnail-samples/
+video-assets/script/      Script, claim ledger and sources
+video-assets/presenter/   Screen-recordable metric deck
+video-assets/thumbnail-samples/contact-sheet-manifest.csv
 ```
 
-## Rebuild the published charts
+## Run the metric presenter
+
+```bash
+python -m http.server 8000 --directory video-assets
+```
+
+Open `http://localhost:8000/presenter/`. Use arrow keys or space to advance, `F` for fullscreen and `N` for speaker notes.
+
+## Reproduce the analysis
 
 ```bash
 python -m pip install -r requirements.txt
-python analysis/build_video_assets.py
 ```
 
-The chart script rebuilds the six charts from committed aggregate/per-video reports. The contact sheet is committed as a video artifact; rebuilding it requires the original downloaded thumbnail directory, which is intentionally excluded.
+The analysis scripts document the transformations used for the video. Exact chart rebuilding additionally requires the local row-level reports and source material, which are intentionally excluded from the public repository. Presentation-ready charts and aggregate summaries are committed as the auditable release artifacts.
 
 ## Method limits
 
@@ -62,6 +71,16 @@ The chart script rebuilds the six charts from committed aggregate/per-video repo
 - Rule-based topic, emotion and opening-hook labels are navigation aids, not human ground truth.
 - No YouTube click-through, retention or impression data was available.
 
-## Exclusions
+## Public release and exclusions
 
-Raw subtitle files, 849 downloaded thumbnail files, YouTube metadata dumps, model weights, embeddings, API credentials and chatbot implementation are not included. The repository publishes derived evidence, reproducible chart code and the assets used in the video.
+This is an independent editorial research snapshot, not an official YouTube or Barış Özcan data product. YouTube-sourced counts are dated **2026-08-20**. All ratios, labels, correlations, estimates and charts are independent calculations—not metrics supplied or endorsed by YouTube.
+
+The public repository excludes raw subtitle files, downloaded thumbnails, row-level YouTube metadata, per-video derived tables, SQLite databases, model weights, embeddings, browser/session data, API credentials and chatbot implementation. The thumbnail manifest retains only source references; third-party images are not redistributed.
+
+The repository is not affiliated with or endorsed by Barış Özcan or YouTube.
+
+## Source terms and licensing
+
+YouTube is the source of the dated public channel/video metadata referenced by this editorial analysis. See the [YouTube Terms of Service](https://www.youtube.com/t/terms), [YouTube API Services Developer Policies](https://developers.google.com/youtube/terms/developer-policies) and [Google Privacy Policy](https://policies.google.com/privacy).
+
+See [`LICENSE`](LICENSE) for the scoped code, documentation and chart licenses. Third-party YouTube content, thumbnails, names and trademarks are excluded from the repository license.

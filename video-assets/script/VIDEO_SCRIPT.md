@@ -14,9 +14,21 @@
 
 **Tek cümlelik vaat:** Barış Özcan kanalının 849 videosunu, 800 transcriptini ve bütün thumbnail kataloğunu analiz ederek gerçekten tekrarlanabilen anlatım ve paketleme sinyallerini; çalışmayan “başarı formüllerinden” ayırıyoruz.
 
-**Hedef süre:** 9–11 dakika
+**Hedef süre:** 12–13 dakika
 
 ---
+## Metrik sunum sayfası
+
+Repo kökünde şu komutu çalıştır:
+
+```bash
+python -m http.server 8000 --directory video-assets
+```
+
+Ardından `http://localhost:8000/presenter/` adresini aç. `←` / `→` veya boşluk slayt değiştirir; `F` tam ekran, `N` konuşmacı notlarıdır. Kayıtta notları kapalı tut.
+
+---
+
 
 ## Temiz konuşma metni ve prodüksiyon notları
 
@@ -26,7 +38,7 @@
 
 > “Buradan ve şuradan giren veri miktarını hiç merak ettiniz mi?”
 
-[EKRAN: Cümle biter bitmez görüntü donsun. Kadrajın üzerine sırasıyla `849 VİDEO`, `800 TRANSCRIPT`, `1,2 MİLYON KELİME` gelsin.]
+[WEB 00 · GİRİŞ: İlk cümle biter bitmez sunum sayfasına kes. `849`, `800`, `1,2 M` sırayla görünür.]
 
 Ben merak ettim.
 
@@ -36,7 +48,7 @@ Bir kanal yıllar boyunca yüzlerce video yayınladığında geride sadece bir o
 
 Peki o parmak izini gerçekten ölçebilir miyiz?
 
-Barış Özcan'ın kanalındaki 849 videoyu, ulaşabildiğim 800 transcripti ve thumbnail kataloğunun tamamını analiz ettim. Sonra bu verilerle konuşabilen küçük bir yapay zekâ sistemi kurdum.
+Barış Özcan'ın kanalındaki 849 videoyu, ulaşabildiğim 800 transcripti ve thumbnail kataloğunun tamamını analiz ettim. Sonra transcriptleri ve görselleri ayrı ayrı yapay zekâ destekli analizlerden geçirdim.
 
 Ama en ilginç sonuç, bulduğum bir başarı formülü değildi.
 
@@ -44,55 +56,85 @@ Tam tersine, formül sandığımız bazı şeylerin veride neredeyse hiç çalı
 
 [BEAT]
 
-Şimdi önce veri setini açalım.
+Şimdi önce bu veri setinin nasıl kurulduğuna bakalım.
 
 ---
 
-### 0:52 — Ne topladım?
+### 0:52 — Ham dosyalardan SQLite'a
 
-[EKRAN: `video-assets/charts/01-channel-scale.png`]
+[WEB 01 · HAM GİRDİLER: `catalog.jsonl`, metadata, manifest ve `subtitles/` kutularını göster.]
 
-Katalogda 849 video var.
+İşe hazır bir tabloyla başlamadım.
 
-Bunların 800 tanesinde kullanılabilir Türkçe transcript bulabildim. Manuel ve otomatik altyazıları temizleyip normalize ettiğimde elimde yaklaşık 1,2 milyon kelime kaldı.
+Elimde kanal kataloğu, ayrı bir metadata dosyası, hangi videoda hangi altyazının bulunduğunu söyleyen bir manifest ve yüzlerce SRT dosyası vardı.
 
-Her video için yayın tarihi, süre, izlenme, beğeni, yorum, başlık ve thumbnail bilgilerini aynı veri setinde birleştirdim.
+Bu dosyaların ortak noktası video kimliğiydi. İlk adımda hepsini bu kimlik üzerinden eşleştirdim.
 
-Analizi yaptığım andaki toplam izlenme görüntüsü yaklaşık 891,6 milyondu. Bu sayı sabit değil; video yayına girdikten sonra da izlenmeye devam ediyor. O nedenle eski ve yeni videoları yalnızca toplam izlenmeyle karşılaştırmadım. Yaş farkını azaltmak için günlük izlenme hızını da kullandım.
+[WEB 02 · SQLITE: `videos`, `transcripts` ve `transcript_cues` tablolarını göster.]
 
-[EKRAN: Kod akışı — katalog → metadata → transcript → thumbnail → analiz]
+Sonra yerel bir SQLite veritabanı oluşturdum.
 
-Transcriptleri 3.775 anlamlı parçaya böldüm. Konuları ve duygu etiketlerini hafif bir içerik haritası olarak kullandım. 849 thumbnail'de renk, parlaklık ve kenar yoğunluğu gibi temel görsel özellikleri çıkardım. Ayrıca zamana ve performans grubuna göre dengelenmiş 120 thumbnail'i yerel bir görsel modelle etiketledim.
+İlk tabloda videonun başlığı, yayın tarihi, süresi, izlenmesi, beğenisi, yorumu ve thumbnail adresi duruyor.
+
+İkinci tabloda her videonun transcripti var. Altyazının manuel mi otomatik mi olduğu, ham metin, temizlenmiş metin, kelime ve cue sayısı burada tutuluyor.
+
+Üçüncü tablo ise zaman kodlu altyazı satırları. Her cümlenin başlangıç ve bitiş saniyesini ayrı saklıyor.
+
+[WEB 03 · VERİYİ AYIRMA: `RAW`, `CLEAN`, `TIMED`, `JOIN` kartlarını sırayla göster.]
+
+Aynı konuşmayı üç farklı biçimde saklamamın nedeni buydu.
+
+Ham SRT dosyasını, bir hata gördüğümde orijinale dönebilmek için korudum.
+
+HTML etiketlerini ve gereksiz boşlukları temizleyerek kesintisiz bir normalize metin oluşturdum. Kelime, konu ve anlatım analizlerini bunun üzerinde yaptım.
+
+Zaman kodlu cue'ları ise özellikle videoların ilk 90 saniyesini inceleyebilmek için ayrı tuttum.
+
+Bir videoda hem manuel hem otomatik Türkçe altyazı varsa manuel olanı tercih ettim. Böylece noktalama işaretine bağlı cümle ölçümlerinde daha güvenilir bir alt küme kullanabildim.
+
+[WEB 04 · SON VERİ SETİ: 849 video, 800 transcript, 1,2 milyon kelime, 198.638 cue ve 891,6 milyon izlenme.]
+
+Veritabanını açtığımda karşımdaki ölçek buydu:
+
+849 video, 800 Türkçe transcript, yaklaşık 1,2 milyon normalize kelime ve 198.638 zaman kodlu altyazı satırı.
+
+Her video için metadata, transcript ve görsel ölçümleri aynı video kimliğinde birleşiyordu.
+
+Analizi yaptığım andaki toplam izlenme görüntüsü yaklaşık 891,6 milyondu. Bu sayı sabit değil; videolar izlenmeye devam ediyor. O nedenle eski ve yeni videoları yalnızca toplam izlenmeyle karşılaştırmadım. Yaş farkını azaltmak için günlük izlenme hızını da kullandım.
+
+Buradan sonra veriyi üç kola ayırdım: performans ve paketleme, transcript ve anlatım, thumbnail ve vision.
+
+Transcriptleri ayrıca 3.775 anlamlı parçaya böldüm. 849 thumbnail'de temel görsel özellikler çıkardım; dengeli 120 örneği de yerel görsel modelle etiketledim.
 
 Burada çok önemli bir sınır var.
 
-Bu çalışma “hangi thumbnail kesin tıklanır?” sorusunun sihirli cevabı değil. İzlenme sayısı; konu, yayın tarihi, dağıtım, izleyici ilgisi ve bizim ölçemediğimiz pek çok değişkenden etkileniyor. Bu yüzden birazdan göreceğiniz ilişkiler neden-sonuç değil. Bunlar, katalogda gördüğümüz betimsel sinyaller.
+Bu çalışma “hangi thumbnail kesin tıklanır?” sorusunun sihirli cevabı değil. İzlenme sayısı; konu, yayın tarihi, dağıtım, izleyici ilgisi ve ölçemediğimiz pek çok değişkenden etkileniyor. Birazdan göreceğiniz ilişkiler neden-sonuç değil; katalogda gördüğümüz betimsel sinyaller.
 
 ---
 
-### 2:05 — Kanal birkaç viral videodan mı ibaret?
+### 2:50 — Kanal birkaç viral videodan mı ibaret?
 
-[EKRAN: `video-assets/charts/02-catalog-lorenz.png`]
+[WEB 05 · ARKA KATALOG: `10 video → %8,4` ve `383 video → yaklaşık %80` kartlarını göster.]
 
 İlk sorum şuydu: Kanalın toplam başarısı birkaç dev videonun omzunda mı duruyor?
 
 Öyle görünmüyor.
 
-En çok izlenen ilk 10 videonun katalogdaki toplam izlenmeden aldığı pay yaklaşık yüzde 8,4. Toplam izlenmenin yüzde 80'ine ulaşmak için videoların yaklaşık yüzde 45'ine ihtiyaç var.
+En çok izlenen ilk 10 video, 891,6 milyonluk toplam izlenmenin yalnızca yüzde 8,4'ünü getiriyor. Toplam izlenmenin yüzde 80'ine ulaşmak içinse en çok izlenen 383 videoyu birlikte saymamız gerekiyor. Bu, kataloğun yüzde 45,1'i.
 
-Bu, kanalın yalnızca birkaç viral videoya bağlı olmadığını gösteriyor. Güçlü bir arka katalog var. Eski videolar da yeni videolarla birlikte izlenme toplamını taşımaya devam ediyor.
+Yani kanal yalnızca birkaç viral videoya bağlı değil. İzlenmeler yüzlerce videoya yayılıyor; güçlü bir arka katalog var. Eski videolar da yeni videolarla birlikte izlenme toplamını taşımaya devam ediyor.
 
 Bir başka deyişle burada tek gecelik bir patlamadan çok, yıllar boyunca biriken bir kütüphane etkisi görüyoruz.
 
-[EKRAN: En eski videolardan yenilere doğru hızlanan bir katalog şeridi.]
+[B-ROLL: Eski videolardan yenilere doğru thumbnail şeridi. İki saniyeyi geçmesin.]
 
 Bu bence videonun geri kalanı için önemli. Çünkü tek bir viral başlığın sırrını aramak yerine, tekrar tekrar çalışabilen editoryal sistemi aramamız gerekiyor.
 
 ---
 
-### 3:05 — En net paketleme sinyali
+### 3:50 — En net paketleme sinyali
 
-[EKRAN: `video-assets/charts/03-duration-performance.png`]
+[WEB 06 · SÜRE: Grafikle birlikte üç süre grubunun video sayısı ve medyanları.]
 
 Paketleme tarafındaki en net betimsel ayrım video süresinde çıktı.
 
@@ -104,6 +146,8 @@ Beş dakikanın altındaki videolarda medyan izlenme yaklaşık 69 bin; günlük
 
 Bu “videoyu uzatırsanız izlenir” demek değil. Uzun videoların konusu, yayınlandığı dönem veya kanalın gelişim evresi farklı olabilir. Fakat katalog içinde uzun formun kanalın ana anlatım biçimi olduğu çok net.
 
+[WEB 07 · BAŞLIK: `<40`, `40–79`, `80+` karakter grupları.]
+
 Başlık uzunluğunda ise aynı ölçüde güçlü bir ayrım yok.
 
 Kısa başlıkların toplam medyan izlenmesi biraz daha yüksekken, 40–79 karakterlik orta uzunluktaki başlıkların günlük izlenme hızı daha yüksek. Yani veriden “başlığın tam olarak şu kadar karakter olsun” diye temiz bir reçete çıkaramıyoruz.
@@ -112,29 +156,58 @@ Bu da iyi bir hatırlatma: İnsanlar cetvelle başlık seçmiyor.
 
 ---
 
-### 4:18 — Thumbnail'lerde sihirli renk var mı?
+### 5:05 — Tahmini YouTube geliri
 
-[EKRAN: `video-assets/thumbnail-samples/qwen-vision-sample-contact-sheet.jpg`]
+[WEB 08 · YOUTUBE GELİRİ: Güncel izlenme, RPM aralığı, orta senaryo ve kelime başı tahmin.]
+
+Bu kadar izlenmeyi görünce akla gelen kaçınılmaz bir soru var:
+
+Bu kanal YouTube'dan şimdiye kadar ne kadar kazanmış olabilir?
+
+Gerçek rakamı Barış Özcan'ın YouTube Studio ekranı olmadan bilemeyiz. YouTube'un kullandığı RPM, içerik üreticisinin bin toplam izlenme başına platformdan elde ettiği geliri gösteriyor.
+
+Social Blade'ın bugünkü sayacında kanal 1 milyar izlenme sınırını geçmiş durumda: 1 milyar 694 bin 83 izlenme. Türkiye ağırlıklı kanallar için yayımlanan tahmini RPM bandını bin izlenme başına 0,50 dolar, 1,10 dolar ve 2,80 dolar olarak üç senaryoya ayırdım.
+
+Bu model, kanalın ömür boyu YouTube platform gelirini yaklaşık 500 bin dolarla 2,8 milyon dolar arasına yerleştiriyor. Orta senaryo yaklaşık 1,1 milyon dolar.
+
+20 Ağustos 2026 tarihli merkez bankası kuruyla bu orta senaryonun bugünkü karşılığı yaklaşık 52,7 milyon lira.
+
+Bu, geçmişte gerçekten tahsil edilen lira tutarı değil. Bugünkü kurla çevrilmiş bir karşılık. Sponsorluklar, marka anlaşmaları, vergiler ve YouTube dışı gelirler de bu hesabın dışında.
+
+Bir de tamamen eğlencelik bir normalizasyon yaptım. Aynı 849 videoluk analiz snapshot'ında orta senaryo geliri 1 milyon 200 bin 642 normalize kelimeye böldüğümüzde kelime başına yaklaşık 82 cent, yani bugünkü kurla 39 lira çıkıyor.
+
+Elbette her kelime eşit para kazandırmadı. Bu yalnızca kanalın ölçeğini başka bir açıdan görmek için yapılmış kaba bir tahmin.
+
+
+---
+
+### 6:05 — Thumbnail'lerde sihirli renk var mı?
+
+[B-ROLL: Qwen örnek contact sheet'i kısa süre tam ekran göster.]
 
 Sonra thumbnail'lere baktım.
 
 849 görselin tamamında doygunluk, parlaklık, kontrast ve kenar yoğunluğu gibi basit sinyalleri ölçtüm.
 
-[EKRAN: `video-assets/charts/04-thumbnail-correlations.png`]
+[WEB 09 · TEMEL THUMBNAIL: Korelasyon grafiği ve üç katsayı.]
 
 Doygunlukla logaritmik izlenme arasındaki Pearson korelasyonu artı 0,233. Ortalama parlaklıkta artı 0,152. Kenar yoğunluğunda ise eksi 0,086.
 
 Bunların hiçbiri tek başına güçlü bir ilişki değil.
 
+[WEB 10 · QWEN: 120 örnek, 39 test videosu, `0,526 → 0,272`.]
+
 Daha sonra 120 thumbnail'lik dengeli örneği görsel modele gösterdim. Model; yüz sayısı, metin konumu, ana özne, hook tipi, renk paleti ve kompozisyon gibi etiketler üretti.
 
-Peki bu daha detaylı görsel etiketler tahmini iyileştirdi mi?
+Peki temel görsel ölçümler ve bu daha detaylı yapay zekâ etiketleri tahmini iyileştirdi mi?
 
-[EKRAN: `video-assets/charts/06-temporal-ablation.png`]
+[WEB 11 · TAM KATALOG TESTİ: `0,287 → 0,179 → 0,102`.]
 
-2025 ve sonrası videolardan oluşan zaman bazlı testte, başlık-süre-yıl gibi temel paketleme modelinin Spearman sıralama korelasyonu 0,288'di. İçerik ve thumbnail özellikleri eklendiğinde bu değer 0,103'e kadar düştü.
+Önce 849 videoluk tam katalog testine baktım. 2025 ve sonrası videolarda başlık, süre ve yıl gibi temel paketleme özelliklerinin Spearman sıralama korelasyonu 0,287'ydi. İçerik ve temel thumbnail ölçümleri eklendiğinde bu değer 0,102'ye kadar düştü.
 
-Yani daha fazla özellik, otomatik olarak daha iyi tahmin demek değil.
+Ayrı yürüttüğüm 120 thumbnail'lik keşifsel Qwen deneyinde de görsel etiketler temel modeli iyileştirmedi. Fakat bu deneyin zaman bazlı test bölümü yalnızca 39 videodan oluşuyordu; dolayısıyla sonucu genelleştiremeyiz.
+
+Yani bu iki deneyde de daha fazla özellik, otomatik olarak daha iyi tahmin demek değildi.
 
 Bu örnek özellikle önemli. Çünkü model bir thumbnail'e çok ikna edici etiketler verebilir. “Yüz var, kontrast yüksek, merak uyandırıyor” diyebilir. Fakat ikna edici açıklama, tahmin gücüyle aynı şey değil.
 
@@ -142,19 +215,22 @@ Görsel yapay zekâ burada bize thumbnail'leri düzenlemek ve örnekleri bulmak 
 
 ---
 
-### 5:52 — Asıl parmak izi: anlatım
+### 7:40 — Asıl parmak izi: anlatım
 
-[EKRAN: `video-assets/charts/05-intro-hooks.png`]
+[WEB 12 · ANLATIM: 480 manuel altyazı, 10,8 kelime/cümle ve `ORTA` okunabilirlik.]
 
 Asıl belirgin parmak izi transcriptlerde ortaya çıktı.
 
 Noktalama işaretleri güvenilir olduğu için bu bölümde özellikle 480 manuel altyazıyı temel aldım.
 
-Medyan cümle uzunluğu yaklaşık 10,8 kelime. Ateşman okunabilirlik skoru yaklaşık 66,9. Yani anlatım teknik konulara girse bile cümleler çoğunlukla erişilebilir kalıyor.
+
+Medyan cümle uzunluğu yaklaşık 10,8 kelime. Türkçe metinler için kullanılan okunabilirlik hesabında medyan sonuç 66,9 bölü 100; yani orta düzey. Başka bir deyişle anlatım teknik konulara girse de gereksiz yere ağırlaşmıyor.
+
+[WEB 13 · İLK 90 SANİYE: 550 soru sinyali, 209 şaşırtıcı iddia, 9 düz ifade.]
 
 Ama daha ilginç olan açılışlar.
 
-800 transcript içinde 550 video bir soruyla başlıyor. 209 video şaşırtıcı bir iddia kullanıyor. Düz bir ifadeyle başlayanların sayısı ise yalnızca dokuz.
+İlk 90 saniyeyi inceleyen kural tabanlı sınıflandırıcı, 800 transcriptin 550'sinde soru odaklı bir açılış sinyali buldu. 209 videoyu şaşırtıcı iddia, yalnızca dokuz videoyu düz ifade olarak sınıflandırdı.
 
 Bu kanalın tekrar eden anlatım hareketi burada görünüyor:
 
@@ -170,39 +246,60 @@ Bunu tek bir cümleyle özetlemem gerekirse: erişilebilir, soru odaklı, benzet
 
 Fakat burada da bir “başarı düğmesi” bulmadık. Yıla göre normalize ettiğim stil özelliklerinin performansla ilişkileri zayıftı. En güçlü sinyalin mutlak Spearman değeri bile yaklaşık 0,15.
 
-Demek ki bir videoyu soru işaretiyle açmak, tek başına başarılı olmasını sağlamıyor.
+Demek ki ilk 90 saniyeye bir soru eklemek, tek başına videoyu başarılı yapmıyor.
 
 Sorunun arkasında anlatılmaya değer bir fikir olması gerekiyor.
 
 ---
 
-### 7:18 — Verilerle konuşan chatbot
+### 9:05 — Arşiv Araştırması
 
-[EKRAN KAYDI: Public chatbot arayüzü. Önce “Merak Sohbeti”, sonra “Arşiv Araştırması”. Erişim anahtarını kayıtta gösterme.]
+[WEB 14 · ARŞİV ARAŞTIRMASI: Geçiş kartı. Ardından gerçek `Arşiv Konuş` sayfasına kes.]
 
-Son adımda bu analizi statik grafiklerden çıkarıp konuşulabilir hale getirdim.
+Bu noktada sonuçları yalnızca grafiklerde bırakmak istemedim.
 
-800 videonun transcriptlerini 3.775 parçalık semantik bir arama indeksine dönüştürdüm. Kullanıcı bir soru sorduğunda sistem önce ilgili transcript parçalarını buluyor.
+800 transcripti böldüğüm 3.775 kaynak parçasını aranabilir bir arşive dönüştürdüm.
 
-Arşiv Araştırması modunda ikinci bir kontrol, bu parçaların soruyu gerçekten cevaplayıp cevaplamadığını denetliyor. Kanıt varsa yanıtın yanında video ve saniye bağlantıları geliyor. Kanıt yoksa sistem bunu açıkça söylüyor.
+[EKRAN KAYDI: Doğrudan `ARŞİV ARAŞTIRMASI` sekmesini seç. `MERAK SOHBETİ` modunu açma.]
 
-[DEMO SORUSU: “Newton beşiği nedir?”]
+Arşiv Araştırması modunda sistem önce soruyla ilgili transcript parçalarını arıyor. Yeterli kanıt bulursa cevabı o parçalarla kuruyor ve kullanılan videoları zaman kodlarıyla birlikte gösteriyor.
 
-[EKRAN: Yanıttaki S1/S2 kaynaklarına ve timestamp kartlarına yakınlaş.]
+[DEMO SORUSU: `Newton beşiği nedir? Arşivdeki videolardan kaynak ve zaman koduyla açıkla.`]
 
-Merak Sohbeti modunda ise transcriptlerden çıkardığım yapısal anlatım profili kullanılıyor. Soru odaklı açılış, erişilebilir cümleler, ölçülü benzetmeler ve genişleyen çerçeve bütün cevaplara uygulanıyor.
+[EKRAN: Cevabın tamamını okumak yerine kaynak video ve zaman kodu kartlarına yakınlaş.]
 
-Bu bir insanın dijital kopyası değil. Kişisel anı veya görüş üretmiyor. Yaptığı şey, kamuya açık videolardan ölçtüğümüz anlatım yapılarını ve arşiv içeriğini kullanılabilir bir araştırma arayüzüne dönüştürmek.
+Burada benim için önemli olan cevabın ne kadar güzel yazıldığı değil.
 
-[DEMO SORUSU: “Bir fikri hikâyeye dönüştürmek neden işe yarar?”]
+Önemli olan, cevaptan onu söyleyen gerçek videoya ve saniyeye geri dönebilmek.
 
-İşte bütün bu çalışmanın bence en kullanışlı çıktısı bu.
+Demo bu bağlantıyı kuramazsa o kaydı kullanmam. Çünkü kaynak göstermeyen akıcı bir cevap, bu videonun anlattığı yönteme ters düşer.
 
-Grafik size katalog hakkında bir sonuç gösteriyor. Chatbot ise sizi o sonucun dayandığı videoya ve cümleye geri götürüyor.
 
 ---
 
-### 8:38 — Sonuç
+### 10:05 — Sonuçtan kaynağa
+
+[WEB 15 · KANIT: Rapor dosyaları ekranda. `analysis-summary.json` ile başlayıp `CLAIM_LEDGER.md` satırında bitir.]
+
+Canlı arayüzün yanında, analiz sonuçlarını kayıt sırasında kullanabileceğim tek bir sunum ekranında topladım.
+
+Ama burada önemli olan tasarım değil. Ekranda gördüğünüz her sayı, yayınlanan bir kanıt dosyasına geri dönüyor.
+
+Katalog dağılımı için ayrı rapor var. 849 videonun performans satırları ayrı. Thumbnail deneyleri, zaman testleri ve anlatım ölçümleri de kendi dosyalarında duruyor.
+
+Böylece bir grafiğin yalnızca sonucunu değil, hangi veriyle üretildiğini ve nerede sınırlandığını da görebiliyorsunuz.
+
+Ham altyazıları, yüzlerce thumbnail dosyasını ve model ağırlıklarını bu pakete koymadım. Fakat videoda kullandığım türetilmiş tablolar, analiz kodları, grafikler ve iddia defteri açık.
+
+Çünkü “yapay zekâ böyle söyledi” tek başına kanıt değil.
+
+Asıl değerli olan, söylediği şeyi veriye geri bağlayabilmek.
+
+---
+
+### 10:50 — Sonuç
+
+[WEB 16 · SONUÇ: Dört çıkarım görünsün. Son cümlede ekranda yalnızca `FORMÜL DEĞİL, SİSTEM` kalsın.]
 
 Başta tek bir soru sorduk:
 
@@ -218,7 +315,7 @@ Korelasyon, neden değildir. Bir özelliği sayabiliyor olmamız, onun izlenmeyi
 
 Belki de kanalın asıl gücü tek bir formülde değil; yıllar boyunca aynı merak kasını farklı konularda tekrar tekrar çalıştırmasındadır.
 
-[EKRAN: Grafikler geriye doğru kapanır, en sonda 849 thumbnail'den oluşan mozaik kalır.]
+[WEB 16: Sonuç kartlarını sırayla kapat; başlık ve `editoryal sistem` ifadesi ekranda kalsın.]
 
 Tüm grafikler, özet tablolar, analiz kodları ve bu videonun kaynak defteri GitHub'da açık olacak.
 
@@ -229,8 +326,8 @@ Bir sonraki videoda hangi kanalın sayılarla görünmeyen parmak izini çıkarm
 ## Kayıt sırasında dikkat edilecekler
 
 - Sayıları ezberden yuvarlama; ekrandaki grafikle aynı değeri söyle.
-- “Şu özellik videoyu başarılı yapıyor” deme. “Katalogda ilişki/sinyal gördük” de.
-- Thumbnail vision sonucunu yalnızca 120 videoluk keşifsel örnek olarak tanımla.
-- Chatbot demosunda erişim anahtarını, terminal yolunu veya yerel servis ayrıntılarını gösterme.
+- Web sunumunda `N` ile açılan konuşmacı notlarını kayıt sırasında kapat; tam ekran için `F` kullan.
+- Qwen vision sonucunu 120 videoluk keşifsel örnek, zaman bazlı testini ise 39 video olarak tanımla; tam katalog deneyiyle karıştırma.
+- Arşiv demosunda yalnızca `ARŞİV ARAŞTIRMASI` modunu göster; `MERAK SOHBETİ` modunu açma. Kaynak video ve zaman kodu görünmeyen cevabı videoda kullanma.
 - Cold open klibini kısa tut; video adı ve bağlantısını açıklamada belirt.
-- Script yaklaşık 1.350–1.500 konuşma kelimesidir; doğal tempoda 9–11 dakika hedefler.
+- Temiz kayıt metni yaklaşık 1.600 konuşma kelimesidir; canlı demo, klip ve doğal duraklamalarla 12–13 dakika hedefler.

@@ -1,0 +1,88 @@
+{
+  "as_of": "2026-08-20",
+  "status": "scenario_estimate_not_reported_income",
+  "rpm_definition": "Creator revenue per 1,000 total views after YouTube revenue share; may include ads, YouTube Premium, memberships, Super Chat and Super Stickers.",
+  "inputs": {
+    "live_channel_views_socialblade": 1000694083,
+    "live_channel_videos_socialblade": 946,
+    "analyzed_catalog_views": 891593029,
+    "analyzed_catalog_videos": 849,
+    "normalized_caption_words": 1200642,
+    "usd_try_reference": 47.9073,
+    "usd_try_method": "Midpoint of TCMB 2026-08-20 indicative forex buying 47.8642 and selling 47.9504",
+    "rpm_scenarios_usd": {
+      "low": 0.5,
+      "base": 1.1,
+      "high": 2.8
+    }
+  },
+  "live_channel_lifetime_scenarios": {
+    "low": {
+      "estimated_usd": 500347,
+      "current_try_equivalent": 23970276
+    },
+    "base": {
+      "estimated_usd": 1100763,
+      "current_try_equivalent": 52734607
+    },
+    "high": {
+      "estimated_usd": 2801943,
+      "current_try_equivalent": 134233545
+    }
+  },
+  "analyzed_catalog_scenarios": {
+    "low": {
+      "estimated_usd": 445797,
+      "current_try_equivalent": 21356907,
+      "usd_per_normalized_word": 0.3713,
+      "try_per_normalized_word": 17.79
+    },
+    "base": {
+      "estimated_usd": 980752,
+      "current_try_equivalent": 46985196,
+      "usd_per_normalized_word": 0.8169,
+      "try_per_normalized_word": 39.13
+    },
+    "high": {
+      "estimated_usd": 2496460,
+      "current_try_equivalent": 119598681,
+      "usd_per_normalized_word": 2.0793,
+      "try_per_normalized_word": 99.61
+    }
+  },
+  "formulas": {
+    "estimated_revenue_usd": "views / 1000 * assumed_rpm_usd",
+    "current_try_equivalent": "estimated_revenue_usd * usd_try_reference",
+    "revenue_per_normalized_word": "analyzed_catalog_estimated_revenue / normalized_caption_words"
+  },
+  "sources": [
+    {
+      "title": "Understand ad revenue analytics",
+      "publisher": "YouTube Help",
+      "url": "https://support.google.com/youtube/answer/9314357?hl=en"
+    },
+    {
+      "title": "Barış Özcan's YouTube Statistics",
+      "publisher": "Social Blade",
+      "url": "https://socialblade.com/youtube/handle/barisozcan"
+    },
+    {
+      "title": "YouTube Revenue Calculator — Turkey (2026)",
+      "publisher": "RevenueLab",
+      "url": "https://www.revenuelab.fyi/youtube-revenue-calculator/turkey"
+    },
+    {
+      "title": "Indicative Exchange Rates — 20 August 2026",
+      "publisher": "Central Bank of the Republic of Türkiye",
+      "url": "https://www.tcmb.gov.tr/kurlar/202608/20082026.xml"
+    }
+  ],
+  "limitations": [
+    "Only the channel owner can see actual historical RPM and revenue in YouTube Studio.",
+    "Applying a 2026 RPM scenario to lifetime views assumes a constant historical rate; actual RPM, monetization eligibility, geography and ad demand changed over time.",
+    "The live-channel estimate uses Social Blade's 946-video, 1.0007-billion-view snapshot. The per-word estimate instead uses the internally consistent 849-video analyzed catalog because transcript words are unavailable for the extra live-channel videos.",
+    "TRY values are current-rate equivalents, not the historical lira amounts received when revenue was earned.",
+    "Taxes, sponsorships, brand deals, merchandise, affiliate income, courses, speaking and other off-platform income are excluded.",
+    "Revenue per word is a playful normalization, not a causal claim that individual words generated equal revenue."
+  ]
+}

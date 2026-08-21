@@ -130,7 +130,7 @@ def hook_mix(summary: dict) -> None:
     bars = ax.bar(labels, values, color=[ORANGE, SAGE, "#b8ae9c", "#91856f", "#d5cdbc"])
     for bar, value in zip(bars, values):
         ax.text(bar.get_x() + bar.get_width() / 2, value + 9, str(value), ha="center", fontweight="bold")
-    ax.set(ylabel="Video sayısı", title="Açılışların çoğu bir soruyla başlıyor")
+    ax.set(ylabel="Video sayısı", title="İlk 90 saniyede soru sinyali baskın")
     ax.tick_params(axis="x", rotation=12)
     ax.spines[["top", "right"]].set_visible(False)
     save(fig, "05-intro-hooks.png")
@@ -138,11 +138,11 @@ def hook_mix(summary: dict) -> None:
 
 def model_ablation(summary: dict) -> None:
     test = summary["packaging"]["full_catalog_temporal_ablation"]
-    order = ["global_median", "baseline_packaging", "baseline_plus_content", "baseline_plus_content_plus_thumbnail"]
-    labels = ["Global medyan", "Paketleme", "+ içerik", "+ thumbnail"]
+    order = ["baseline_packaging", "baseline_plus_content", "baseline_plus_content_plus_thumbnail"]
+    labels = ["Paketleme", "+ içerik", "+ temel thumbnail"]
     values = [test[key]["test_2025_plus"]["spearman"] for key in order]
     fig, ax = plt.subplots(figsize=(9, 5.5))
-    bars = ax.bar(labels, values, color=["#b8ae9c", ORANGE, SAGE, "#837865"])
+    bars = ax.bar(labels, values, color=[ORANGE, SAGE, "#837865"])
     for bar, value in zip(bars, values):
         ax.text(bar.get_x() + bar.get_width() / 2, value + .012, f"{value:.3f}", ha="center", fontweight="bold")
     ax.set(ylim=(0, .42), ylabel="Spearman — 2025+ test", title="Daha fazla özellik, daha iyi tahmin demek değil")

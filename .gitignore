@@ -8,3 +8,19 @@ __pycache__/
 *.onnx
 .chatbot-api-token
 .DS_Store
+
+# Local source material and row-level YouTube-derived datasets
+data/reports/video-performance.csv
+data/reports/title-duration.csv
+data/reports/title-duration.json
+data/reports/topic-assignments.csv
+data/reports/creator-style-videos.csv
+data/reports/thumbnail-features.csv
+data/reports/thumbnail-ocr.csv
+data/reports/thumbnail-vision-labels.jsonl
+data/reports/thumbnail-vision-performance.csv
+data/reports/thumbnail-vision-sample.csv
+video-assets/thumbnail-samples/qwen-vision-sample-contact-sheet.jpg
+
+# Local thumbnail composition helper depends on unredistributed source imagery
+analysis/build_thumbnail.py

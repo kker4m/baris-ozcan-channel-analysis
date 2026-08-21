@@ -55,7 +55,7 @@ def main() -> None:
             "basic_thumbnail_correlations": thumbnail["features"],
             "full_catalog_temporal_ablation": packaging["results"],
             "vision_sample_temporal_ablation": vision_ablation["results"],
-            "takeaway": "Long-form format is the clearest descriptive packaging split. Color and Qwen visual labels did not add stable predictive value beyond the temporal baseline.",
+            "takeaway": "Long-form format is the clearest descriptive packaging split. Basic full-catalog color features and exploratory Qwen labels, evaluated in separate temporal tests, did not add stable predictive value beyond their respective baselines.",
         },
         "content_baseline": {
             "topic_chunk_counts": semantic["topics"],

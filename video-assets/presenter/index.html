@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>849 Videonun DNA'sı — Sunum</title>
+  <link rel="stylesheet" href="presenter.css">
+</head>
+<body>
+  <main id="app" aria-live="polite"></main>
+
+  <div class="chrome" aria-label="Sunum kontrolleri">
+    <div class="chrome__status">
+      <span id="section-name">Giriş</span>
+      <span id="slide-count">01 / 13</span>
+    </div>
+    <div id="progress" class="progress" aria-hidden="true"></div>
+    <nav class="controls" aria-label="Slayt navigasyonu">
+      <button id="prev" type="button" aria-label="Önceki slayt">←</button>
+      <div id="dots" class="dots"></div>
+      <button id="notes-toggle" type="button" aria-label="Konuşmacı notlarını aç">N</button>
+      <button id="fullscreen" type="button" aria-label="Tam ekran">⛶</button>
+      <button id="next" type="button" aria-label="Sonraki slayt">→</button>
+    </nav>
+  </div>
+
+  <aside id="notes" class="notes" aria-hidden="true">
+    <div class="notes__label">KONUŞMACI NOTU</div>
+    <p id="notes-copy"></p>
+  </aside>
+
+  <script src="presenter.js"></script>
+</body>
+</html>
